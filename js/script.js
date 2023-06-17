@@ -1,6 +1,4 @@
 $(document).ready(function () {
-  new WOW().init();
-
   gsap.utils.toArray(".comparisonSection").forEach((section) => {
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -129,4 +127,28 @@ $(document).ready(function () {
     $(".menu-wrap").toggleClass("open");
     $("body, html").toggleClass("overflow");
   });
+
+  // Banner image animation
+  var anmitaeOnHover = true;
+
+  $(".images-wrap li").each(function () {
+    var current = this;
+    $(current).on("mouseenter", function () {
+      if (anmitaeOnHover) {
+        anmitaeOnHover = false;
+        $(current).addClass("animated");
+
+        setTimeout(function () {
+          $(current).removeClass("animated");
+          $(current).parent().prepend(current);
+        }, 1000);
+      }
+    });
+  });
+
+  $(".images-wrap").on("mouseleave", function () {
+    anmitaeOnHover = true;
+  });
+
+  AOS.init();
 });

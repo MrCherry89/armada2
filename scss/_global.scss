@@ -115,14 +115,26 @@ a {
     &:before {
       content: none;
     }
+    &:after {
+      content: "";
+      background: $yellow;
+      width: 0;
+      transition: 0.5s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100%;
+    }
     svg {
       margin: auto;
-      transition: 0.3s;
+      transition: 0.5s;
       fill: #514d4e;
     }
     &:hover {
-      background: $yellow;
-      border-color: $yellow;
+      &:after {
+        width: 100%;
+      }
       svg {
         fill: white;
       }
@@ -148,12 +160,6 @@ a {
 }
 
 .yellow-title {
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 110%;
-  font-family: $b;
-  color: $yellow;
-  display: inline-block;
   @media (max-width: 1200px) {
     font-size: 40px;
   }
@@ -184,11 +190,6 @@ a {
 }
 
 .black-title {
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 110%;
-  font-family: $b;
-  color: #514d4e;
   @include flex;
   @include dir-col;
   @media (max-width: 1200px) {
