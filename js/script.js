@@ -141,7 +141,7 @@ $(document).ready(function () {
         setTimeout(function () {
           $(current).removeClass("animated");
           $(current).parent().prepend(current);
-        }, 1000);
+        }, 1100);
       }
     });
   });
