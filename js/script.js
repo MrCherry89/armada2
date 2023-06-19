@@ -130,16 +130,24 @@ $(document).ready(function () {
 
   // Banner image animation
   var anmitaeOnHover = true;
+  var timer;
 
   $(".images-wrap li").each(function () {
     var current = this;
+
     $(current).on("mouseenter", function () {
-      console.log(anmitaeOnHover);
+      if ($(current).hasClass("animated")) {
+        clearTimeout(timer);
+        $(current).parent().prepend(current);
+        $(current).removeClass("animated");
+        return;
+      }
+
       if (anmitaeOnHover) {
         anmitaeOnHover = false;
         $(current).addClass("animated");
 
-        setTimeout(function () {
+        timer = setTimeout(function () {
           $(current).removeClass("animated");
           $(current).parent().prepend(current);
         }, 1100);
