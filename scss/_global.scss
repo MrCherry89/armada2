@@ -296,20 +296,25 @@ a {
     z-index: -2;
     background-color: transparent;
   }
-  &:hover {
-    color: white;
-    &::before {
-      box-shadow: inset 0 0 0 200px rgba($yellow, 1);
+  @media (min-width: 768px) {
+    &:hover {
+      color: white;
+      &::before {
+        box-shadow: inset 0 0 0 200px rgba($yellow, 1);
+      }
     }
   }
+
   &.yellow-btn {
     background: $yellow;
     color: white;
     border: none;
-    &:hover {
-      color: $yellow;
-      &::before {
-        box-shadow: inset 0 0 0 200px rgba(#514d4e, 1);
+    @media (min-width: 768px) {
+      &:hover {
+        color: $yellow;
+        &::before {
+          box-shadow: inset 0 0 0 200px rgba(#514d4e, 1);
+        }
       }
     }
   }
@@ -317,10 +322,12 @@ a {
     background: white;
     color: $yellow;
     border: none;
-    &:hover {
-      color: white;
-      &::before {
-        box-shadow: inset 0 0 0 200px rgba($yellow, 1);
+    @media (min-width: 768px) {
+      &:hover {
+        color: white;
+        &::before {
+          box-shadow: inset 0 0 0 200px rgba($yellow, 1);
+        }
       }
     }
   }

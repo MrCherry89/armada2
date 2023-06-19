@@ -1203,7 +1203,7 @@
     }
     .lets-idea-item {
       background: #514d4e;
-      min-height: 418px;
+      min-height: 440px;
       align-self: flex-start;
       padding: 25px;
       position: relative;
@@ -1244,28 +1244,61 @@
           max-width: 70%;
         }
       }
-      .global-btn {
+      .idea-btn {
         position: absolute;
         bottom: 0;
         left: 0;
         border: 1px solid $yellow;
         z-index: 2;
-        @media (max-width: 767px) {
-          width: 100%;
+        width: 100%;
+        background: white;
+        color: $yellow;
+        height: 65px;
+        padding: 0 30px;
+        @include flex;
+        @include align-center;
+        font-family: $b;
+        font-size: 24px;
+        font-weight: bold;
+        @include justify-center;
+        @media (max-width: 1024px) {
+          height: 50px;
+          font-size: 20px;
+        }
+        &:after {
+          content: "";
+          transition: 0.5s;
+          width: 0;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: $yellow;
+          z-index: -1;
+        }
+        &.grey {
+          &:after {
+            background: #514d4e;
+          }
         }
         &:hover {
           border-color: white;
+          color: white;
+          &:after {
+            width: 100%;
+          }
         }
       }
       > img {
         position: absolute;
-        bottom: 0;
+        bottom: 65px;
         right: 40px;
         @media (max-width: 1200px) {
           right: 10px;
         }
         @media (max-width: 1024px) {
           width: 270px;
+          bottom: 50px;
         }
         @media (max-width: 767px) {
           width: 50vw;
@@ -1898,12 +1931,8 @@
           }
           .global-btn {
             margin-top: auto;
-            width: 100%;
-            max-width: 100%;
-            &::before {
-              content: "";
-              width: 110%;
-              max-width: 910px;
+            @media (max-width: 767px) {
+              max-width: 100%;
             }
           }
         }

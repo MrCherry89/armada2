@@ -355,33 +355,39 @@ a:focus {
   z-index: -2;
   background-color: transparent;
 }
-.global-btn:hover {
-  color: white;
-}
-.global-btn:hover::before {
-  box-shadow: inset 0 0 0 200px #eeb116;
+@media (min-width: 768px) {
+  .global-btn:hover {
+    color: white;
+  }
+  .global-btn:hover::before {
+    box-shadow: inset 0 0 0 200px #eeb116;
+  }
 }
 .global-btn.yellow-btn {
   background: #eeb116;
   color: white;
   border: none;
 }
-.global-btn.yellow-btn:hover {
-  color: #eeb116;
-}
-.global-btn.yellow-btn:hover::before {
-  box-shadow: inset 0 0 0 200px #514d4e;
+@media (min-width: 768px) {
+  .global-btn.yellow-btn:hover {
+    color: #eeb116;
+  }
+  .global-btn.yellow-btn:hover::before {
+    box-shadow: inset 0 0 0 200px #514d4e;
+  }
 }
 .global-btn.white-btn {
   background: white;
   color: #eeb116;
   border: none;
 }
-.global-btn.white-btn:hover {
-  color: white;
-}
-.global-btn.white-btn:hover::before {
-  box-shadow: inset 0 0 0 200px #eeb116;
+@media (min-width: 768px) {
+  .global-btn.white-btn:hover {
+    color: white;
+  }
+  .global-btn.white-btn:hover::before {
+    box-shadow: inset 0 0 0 200px #eeb116;
+  }
 }
 
 .comparisonSection {
@@ -2258,7 +2264,7 @@ a:focus {
 }
 .lets-idea .wrapper .lets-idea-item {
   background: #514d4e;
-  min-height: 418px;
+  min-height: 440px;
   align-self: flex-start;
   padding: 25px;
   position: relative;
@@ -2312,24 +2318,60 @@ a:focus {
     max-width: 70%;
   }
 }
-.lets-idea .wrapper .lets-idea-item .global-btn {
+.lets-idea .wrapper .lets-idea-item .idea-btn {
   position: absolute;
   bottom: 0;
   left: 0;
   border: 1px solid #eeb116;
   z-index: 2;
+  width: 100%;
+  background: white;
+  color: #eeb116;
+  height: 65px;
+  padding: 0 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Bebas Neue";
+  font-size: 24px;
+  font-weight: bold;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
-@media (max-width: 767px) {
-  .lets-idea .wrapper .lets-idea-item .global-btn {
-    width: 100%;
+@media (max-width: 1024px) {
+  .lets-idea .wrapper .lets-idea-item .idea-btn {
+    height: 50px;
+    font-size: 20px;
   }
 }
-.lets-idea .wrapper .lets-idea-item .global-btn:hover {
+.lets-idea .wrapper .lets-idea-item .idea-btn:after {
+  content: "";
+  transition: 0.5s;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #eeb116;
+  z-index: -1;
+}
+.lets-idea .wrapper .lets-idea-item .idea-btn.grey:after {
+  background: #514d4e;
+}
+.lets-idea .wrapper .lets-idea-item .idea-btn:hover {
   border-color: white;
+  color: white;
+}
+.lets-idea .wrapper .lets-idea-item .idea-btn:hover:after {
+  width: 100%;
 }
 .lets-idea .wrapper .lets-idea-item > img {
   position: absolute;
-  bottom: 0;
+  bottom: 65px;
   right: 40px;
 }
 @media (max-width: 1200px) {
@@ -2340,6 +2382,7 @@ a:focus {
 @media (max-width: 1024px) {
   .lets-idea .wrapper .lets-idea-item > img {
     width: 270px;
+    bottom: 50px;
   }
 }
 @media (max-width: 767px) {
@@ -3154,13 +3197,11 @@ a:focus {
 }
 .project-types .wrapper .project-types-items .project-types-item .hide-block .global-btn {
   margin-top: auto;
-  width: 100%;
-  max-width: 100%;
 }
-.project-types .wrapper .project-types-items .project-types-item .hide-block .global-btn::before {
-  content: "";
-  width: 110%;
-  max-width: 910px;
+@media (max-width: 767px) {
+  .project-types .wrapper .project-types-items .project-types-item .hide-block .global-btn {
+    max-width: 100%;
+  }
 }
 .project-types .wrapper .global-btn {
   width: 100%;

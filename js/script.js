@@ -134,6 +134,7 @@ $(document).ready(function () {
   $(".images-wrap li").each(function () {
     var current = this;
     $(current).on("mouseenter", function () {
+      console.log(anmitaeOnHover);
       if (anmitaeOnHover) {
         anmitaeOnHover = false;
         $(current).addClass("animated");
