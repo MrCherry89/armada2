@@ -1600,12 +1600,14 @@
       margin-bottom: 70px;
       @media (max-width: 767px) {
         margin-bottom: 20px;
+        flex-direction: row-reverse;
       }
       .navigation-wrap {
         width: calc((100% - 20px) / 2);
         position: relative;
         @media (max-width: 767px) {
-          display: none;
+          right: 30px;
+          width: 92px;
         }
         .slider-navigation {
           left: 0;
@@ -2537,6 +2539,9 @@
           @media (max-width: 767px) {
             margin-bottom: 15px;
           }
+          @media (max-height: 570px) {
+            margin-bottom: 10px;
+          }
           &:hover {
             a {
               color: $yellow;
@@ -2553,6 +2558,9 @@
             }
             @media (max-width: 767px) {
               font-size: 28px;
+            }
+            @media (max-height: 570px) {
+              font-size: 22px;
             }
             &:hover {
               color: $yellow;
