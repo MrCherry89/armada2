@@ -521,7 +521,7 @@
     }
     .promotions-offers-items {
       display: grid;
-      gap: 20px;
+      gap: 0px 20px;
       grid-template-columns: 1fr 1fr;
       @media (max-width: 767px) {
         grid-template-columns: 1fr;
@@ -530,6 +530,7 @@
       .promotions-offers-item {
         height: 366px;
         @include flex;
+        overflow: hidden;
         @media (max-width: 1024px) {
           height: 320px;
         }
@@ -605,8 +606,8 @@
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center center;
-          margin-top: 90px;
           position: relative;
+          margin-top: 90px;
           @media (max-width: 767px) {
             margin-top: 0;
           }
@@ -670,7 +671,7 @@
               }
               @media (max-width: 767px) {
                 font-size: 18px;
-                bottom: 20px;
+                bottom: 30px;
                 left: 20px;
               }
             }
@@ -2068,7 +2069,6 @@
       position: relative;
       z-index: 0;
       @include flex;
-      cursor: pointer;
       flex-direction: row-reverse;
       @media (max-width: 1024px) {
         width: 100%;
@@ -2541,6 +2541,9 @@
           }
           @media (max-height: 570px) {
             margin-bottom: 10px;
+          }
+          &.active a {
+            color: $yellow;
           }
           &:hover {
             a {

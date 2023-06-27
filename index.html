@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/slick-theme.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -1123,7 +1124,8 @@
           >
         </h2>
         <div class="promotions-offers-items">
-          <div
+          <a
+            href="#"
             class="promotions-offers-item item1"
             data-aos="flip-left"
             data-aos-offset="100"
@@ -1143,8 +1145,9 @@
               alt=""
               class="style-img"
             />
-          </div>
-          <div
+          </a>
+          <a
+            href="#"
             class="promotions-offers-item item2"
             data-aos="flip-right"
             data-aos-offset="100"
@@ -1162,7 +1165,29 @@
               alt=""
               class="style-img"
             />
-          </div>
+          </a>
+          <a
+            href="#"
+            class="promotions-offers-item item1"
+            data-aos="flip-left"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+          >
+            <div class="project-gift">
+              <img src="img/promotions-offers-img3.png" alt="" />
+              <span
+                >Проект <br />
+                в подарок</span
+              >
+            </div>
+            <img
+              src="img/promotions-offers-img1.png"
+              alt=""
+              class="style-img"
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -1376,9 +1401,27 @@
     <script src="js/aos.js"></script>
     <script src="js/gsap.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/script.js"></script>
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+
+    <div id="sent-popup" class="mfp-hide white-popup mfp-with-anim main-popup">
+      <div class="popup-body">
+        <button title="Close (Esc)" type="button" class="mfp-close"></button>
+        <div class="sent-wrap">
+          <img src="img/sent-check.svg" alt="" class="check-icon" />
+          <h2 class="black-title">
+            <span>Ваши данные успешно отправлены</span>
+          </h2>
+          <p>
+            Наш менеджер свяжется с вами в течение 20 минут и обо всем
+            проконсультирует
+          </p>
+          <a href="#" class="global-btn">На главную</a>
+        </div>
+      </div>
+    </div>
 
     <script>
       let center = [55.807076, 37.385825];

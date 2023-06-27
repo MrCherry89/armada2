@@ -38,6 +38,23 @@ $(document).ready(function () {
     },
   });
 
+  $(".calculate-form").on("submit", function (e) {
+    e.preventDefault();
+    if ($(".calculate-form").valid()) {
+      $.magnificPopup.open({
+        items: {
+          src: "#sent-popup",
+        },
+        type: "inline",
+      });
+    }
+  });
+
+  $(".popup").magnificPopup({
+    type: "inline",
+    mainClass: "mfp-fade",
+  });
+
   $(".phone-number-input").inputmask({
     mask: "+7 (999) 999 - 99 - 99",
   });
