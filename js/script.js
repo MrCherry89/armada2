@@ -176,5 +176,24 @@ $(document).ready(function () {
     anmitaeOnHover = true;
   });
 
+  $(".filters-btn").on("click", function () {
+    $(this).toggleClass("active");
+    $(".filters-wrapper").toggleClass("open");
+  });
+
+  $(".apply-filter").on("click", function () {
+    var list = $(".filter .checkbox-wrap input:checked");
+    if (list.length > 0) {
+      $(".filters-btn .counter").addClass("active").text(list.length);
+    } else {
+      $(".filters-btn .counter").removeClass("active").text("");
+    }
+  });
+
+  $(".remove-filter").on("click", function () {
+    $(".filter .checkbox-wrap input").prop("checked", false);
+    $(".filters-btn .counter").removeClass("active").text("");
+  });
+
   AOS.init();
 });
