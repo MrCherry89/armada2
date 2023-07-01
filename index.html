@@ -210,6 +210,133 @@
           <span class="line"></span>
           <span class="line"></span>
         </button>
+        <div class="search-resault">
+          <button class="close">
+            <svg
+              viewBox="0 0 37 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                y1="-0.5"
+                x2="49.4974"
+                y2="-0.5"
+                transform="matrix(0.707108 0.707106 -0.707108 0.707106 1 1)"
+              />
+              <line
+                y1="-0.5"
+                x2="49.4974"
+                y2="-0.5"
+                transform="matrix(0.707108 -0.707106 0.707108 0.707106 1 36)"
+              />
+            </svg>
+          </button>
+          <p class="resault-text">результаты поиска : 103</p>
+          <div class="resault-info-items">
+            <div class="scroll">
+              <div class="resault-info-item">
+                <h3>Каркасный дом “валенсия”</h3>
+                <div class="info">
+                  <div class="img-wrap">
+                    <img src="img/resault-img1.jpg" alt="" />
+                  </div>
+                  <div class="text-wrap">
+                    <ul class="list">
+                      <li>
+                        <span>Этажность</span>
+                        <span class="black">2</span>
+                      </li>
+                      <li>
+                        <span>Площадь</span>
+                        <span class="black">120 кв.м</span>
+                      </li>
+                    </ul>
+                    <div class="price">
+                      <span class="text">от </span>
+                      <span class="itog">3,172,770</span>
+                      <span class="rub">руб.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resault-info-item">
+                <h3>Каркасный дом “валенсия”</h3>
+                <div class="info">
+                  <div class="img-wrap">
+                    <img src="img/resault-img1.jpg" alt="" />
+                  </div>
+                  <div class="text-wrap">
+                    <ul class="list">
+                      <li>
+                        <span>Этажность</span>
+                        <span class="black">2</span>
+                      </li>
+                      <li>
+                        <span>Площадь</span>
+                        <span class="black">120 кв.м</span>
+                      </li>
+                    </ul>
+                    <div class="price">
+                      <span class="text">от </span>
+                      <span class="itog">3,172,770</span>
+                      <span class="rub">руб.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resault-info-item">
+                <h3>Каркасный дом “валенсия”</h3>
+                <div class="info">
+                  <div class="img-wrap">
+                    <img src="img/resault-img1.jpg" alt="" />
+                  </div>
+                  <div class="text-wrap">
+                    <ul class="list">
+                      <li>
+                        <span>Этажность</span>
+                        <span class="black">2</span>
+                      </li>
+                      <li>
+                        <span>Площадь</span>
+                        <span class="black">120 кв.м</span>
+                      </li>
+                    </ul>
+                    <div class="price">
+                      <span class="text">от </span>
+                      <span class="itog">3,172,770</span>
+                      <span class="rub">руб.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resault-info-item">
+                <h3>Каркасный дом “валенсия”</h3>
+                <div class="info">
+                  <div class="img-wrap">
+                    <img src="img/resault-img1.jpg" alt="" />
+                  </div>
+                  <div class="text-wrap">
+                    <ul class="list">
+                      <li>
+                        <span>Этажность</span>
+                        <span class="black">2</span>
+                      </li>
+                      <li>
+                        <span>Площадь</span>
+                        <span class="black">120 кв.м</span>
+                      </li>
+                    </ul>
+                    <div class="price">
+                      <span class="text">от </span>
+                      <span class="itog">3,172,770</span>
+                      <span class="rub">руб.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -702,7 +829,9 @@
             бесплатно</span
           >
           <img src="img/lets-idea-img1.svg" alt="" />
-          <a href="#" class="idea-btn">Записаться к архитектору</a>
+          <a href="#leave-popup" class="idea-btn popup"
+            >Записаться к архитектору</a
+          >
         </div>
         <div
           class="lets-idea-item yellow"
@@ -798,7 +927,7 @@
           </h2>
           <div class="buttons-wrap">
             <div class="button">
-              <a href="#" class="global-btn white-btn"
+              <a href="#leave-popup" class="global-btn white-btn popup"
                 >Записаться к архитектору</a
               >
               <span>Бесплатная консультация в офисе</span>
@@ -1397,6 +1526,33 @@
             проконсультирует
           </p>
           <a href="#" class="global-btn">На главную</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="leave-popup" class="mfp-hide white-popup mfp-with-anim main-popup">
+      <div class="popup-body">
+        <button title="Close (Esc)" type="button" class="mfp-close"></button>
+        <div class="leave-info">
+          <h2>оставьте свои актуальные данные</h2>
+          <p>Мы свяжемся с Вами в течение 30 минут</p>
+          <form class="leave-form">
+            <input type="text" name="name" placeholder="Ваше имя" />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Ваш номер"
+              class="phone-number-input"
+            />
+            <button class="style2-btn">отправить</button>
+            <div class="checkbox-wrap">
+              <label>
+                <input type="checkbox" />
+                <span></span>
+                Я согласен (а) с политикой обработки персональных данных
+              </label>
+            </div>
+          </form>
         </div>
       </div>
     </div>

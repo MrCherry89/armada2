@@ -38,6 +38,17 @@ $(document).ready(function () {
     },
   });
 
+  $(".leave-form").validate({
+    rules: {
+      phone: {
+        required: true,
+      },
+      name: {
+        required: true,
+      },
+    },
+  });
+
   $(".calculate-form").on("submit", function (e) {
     e.preventDefault();
     if ($(".calculate-form").valid()) {
@@ -193,6 +204,24 @@ $(document).ready(function () {
   $(".remove-filter").on("click", function () {
     $(".filter .checkbox-wrap input").prop("checked", false);
     $(".filters-btn .counter").removeClass("active").text("");
+  });
+
+  $(document).on("click", ".header-search button", function (e) {
+    e.preventDefault();
+    var inputValue = $(this)
+      .closest(".header-search")
+      .find("input")
+      .val().length;
+    if (inputValue > 0) {
+      $(".search-resault").addClass("open");
+      $("body, html").addClass("opacity");
+    }
+  });
+
+  $(".search-resault .close").on("click", function () {
+    $(".search-resault").removeClass("open");
+    $("body, html").removeClass("opacity");
+    $(".header-search input").val("");
   });
 
   AOS.init();

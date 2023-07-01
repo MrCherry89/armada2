@@ -25,14 +25,18 @@
         <div class="form-wrap">
           <form class="header-search">
             <input type="text" />
-            <button><img src="img/search-icon.svg" alt="" /></button>
+            <button type="button">
+              <img src="img/search-icon.svg" alt="" />
+            </button>
           </form>
         </div>
         <div class="menu-wrap">
           <div class="top-mobile">
             <form class="header-search">
               <input type="text" />
-              <button><img src="img/search-icon.svg" alt="" /></button>
+              <button type="button">
+                <img src="img/search-icon.svg" alt="" />
+              </button>
             </form>
             <div class="sign-in-wrap">
               <a href="#" class="favorite">
@@ -340,224 +344,18 @@
       </div>
     </header>
 
-    <div class="wrapper">
-      <div class="catalog-info">
-        <div class="text-wrap">
-          <h2 class="black-title">
-            <span>Барнхаусы</span>
-          </h2>
-          <p>
-            Стиль архитектуры с использованием дерева и кирпича. Характеризуется
-            крутыми крышами и большими окнами для естественного света. В городе
-            много домов в этом стиле, создающих уютную атмосферу.
-          </p>
-          <a href="#" class="global-btn yellow-btn">заказать</a>
-        </div>
-        <div class="img-wrap">
-          <img src="img/catalog-img.png" alt="" />
-        </div>
-      </div>
-    </div>
-
-    <div class="catalog-filters">
+    <div class="project-block solutions-project-block">
       <div class="wrapper">
-        <button class="filters-btn">
-          <svg
-            width="18"
-            height="22"
-            viewBox="0 0 18 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <h2 class="black-title">
+          <span
+            data-aos="flip-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            >построенные проекты</span
           >
-            <path
-              d="M13.9585 8.75C13.5443 8.75 13.2085 8.41421 13.2085 8L13.2085 1C13.2085 0.585786 13.5443 0.25 13.9585 0.25C14.3727 0.25 14.7085 0.585786 14.7085 1L14.7085 8C14.7085 8.41421 14.3727 8.75 13.9585 8.75Z"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M4 4.75C6.07107 4.75 7.75 6.42893 7.75 8.5C7.75 10.5711 6.07107 12.25 4 12.25C1.92893 12.25 0.25 10.5711 0.25 8.5C0.25 6.42893 1.92893 4.75 4 4.75ZM6.25 8.5C6.25 7.25736 5.24264 6.25 4 6.25C2.75736 6.25 1.75 7.25736 1.75 8.5C1.75 9.74264 2.75736 10.75 4 10.75C5.24264 10.75 6.25 9.74264 6.25 8.5Z"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M14 17.25C16.0711 17.25 17.75 15.5711 17.75 13.5C17.75 11.4289 16.0711 9.75 14 9.75C11.9289 9.75 10.25 11.4289 10.25 13.5C10.25 15.5711 11.9289 17.25 14 17.25ZM16.25 13.5C16.25 14.7426 15.2426 15.75 14 15.75C12.7574 15.75 11.75 14.7426 11.75 13.5C11.75 12.2574 12.7574 11.25 14 11.25C15.2426 11.25 16.25 12.2574 16.25 13.5Z"
-            />
-            <path
-              d="M3.20852 14C3.20852 13.5858 3.54431 13.25 3.95852 13.25C4.37273 13.25 4.70852 13.5858 4.70852 14V21C4.70852 21.4142 4.37273 21.75 3.95852 21.75C3.54431 21.75 3.20852 21.4142 3.20852 21V14Z"
-            />
-            <path
-              d="M13.9585 21.75C13.5443 21.75 13.2085 21.4142 13.2085 21V19C13.2085 18.5858 13.5443 18.25 13.9585 18.25C14.3727 18.25 14.7085 18.5858 14.7085 19V21C14.7085 21.4142 14.3727 21.75 13.9585 21.75Z"
-            />
-            <path
-              d="M3.20852 1C3.20852 0.585787 3.54431 0.25 3.95852 0.25C4.37273 0.25 4.70852 0.585787 4.70852 1V3C4.70852 3.41421 4.37273 3.75 3.95852 3.75C3.54431 3.75 3.20852 3.41421 3.20852 3V1Z"
-            />
-          </svg>
-          <span class="text">фильтры</span>
-          <span class="counter"></span>
-        </button>
-        <div class="filters-wrapper">
-          <div class="filters">
-            <div class="filter">
-              <span class="name">технология</span>
-              <div class="checkboxes">
-                <span class="border"></span>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>Каркас</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>Cип</p>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="filter">
-              <span class="name">площадь дома</span>
-              <div class="checkboxes">
-                <span class="border"></span>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>до 100м2</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>от 100м2 до 150м2</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>от 150м2 до 200м2</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>от 200м2</p>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="filter">
-              <span class="name">этажность</span>
-              <div class="checkboxes">
-                <span class="border"></span>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>1 эт.</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>2 эт.</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>3 эт.</p>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="filter">
-              <span class="name">тип проекта</span>
-              <div class="checkboxes">
-                <span class="border"></span>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>барнхаус</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>классика</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>хайтек</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>армадико</p>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="filter">
-              <span class="name">кол-во спален</span>
-              <div class="checkboxes">
-                <span class="border"></span>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>1</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>2</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>4</p>
-                  </label>
-                </div>
-                <div class="checkbox-wrap style2">
-                  <label>
-                    <input type="checkbox" />
-                    <span></span>
-                    <p>5</p>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="bottom-info">
-            <span class="found">Найдено: 32 проекта</span>
-            <button class="apply-filter">Применить</button>
-            <button class="remove-filter">сбросить фильтр</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-block">
-      <div class="wrapper">
+        </h2>
         <div class="project-items">
           <div class="project-item">
             <div class="img-wrap">
@@ -728,22 +526,22 @@
             </div>
           </div>
         </div>
-        <a href="#" class="style3-btn">показать еще</a>
-        <div class="pagination-wrap">
-          <button class="left-arrow">
-            <img src="img/pag-arr-left.svg" alt="" />
-          </button>
-          <ul class="pagination-list">
-            <button class="active">1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>...</button>
-            <button>8</button>
-          </ul>
-          <button class="right-arrow">
-            <img src="img/pag-arr-right.svg" alt="" />
-          </button>
-        </div>
+      </div>
+    </div>
+
+    <div class="project-map">
+      <div class="wrapper">
+        <h2 class="black-title">
+          <span
+            data-aos="flip-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            >Карта проектов</span
+          >
+        </h2>
+        <div id="map"></div>
       </div>
     </div>
 
@@ -811,6 +609,8 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/script.js"></script>
 
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+
     <div id="sent-popup" class="mfp-hide white-popup mfp-with-anim main-popup">
       <div class="popup-body">
         <button title="Close (Esc)" type="button" class="mfp-close"></button>
@@ -827,5 +627,44 @@
         </div>
       </div>
     </div>
+
+    <script>
+      let center = [55.807076, 37.385825];
+
+      function init() {
+        let map = new ymaps.Map("map", {
+          center: center,
+          zoom: 11,
+          controls: [],
+        });
+
+        let placemark = new ymaps.Placemark(
+          center,
+          {},
+          {
+            iconLayout: "default#image",
+            iconImageHref: "img/map-marker.svg",
+            iconImageOffset: [0, 0],
+            iconImageSize: [38, 38],
+          }
+        );
+
+        let placemark2 = new ymaps.Placemark(
+          center,
+          {},
+          {
+            iconLayout: "default#image",
+            iconImageHref: "img/map-marker.svg",
+            iconImageOffset: [100, 100],
+            iconImageSize: [38, 38],
+          }
+        );
+
+        map.geoObjects.add(placemark);
+        map.geoObjects.add(placemark2);
+        map.behaviors.disable("scrollZoom");
+      }
+      ymaps.ready(init);
+    </script>
   </body>
 </html>
