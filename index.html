@@ -179,7 +179,9 @@
             <a href="tel:+74951064020" class="phone">+7 (495) 106-40-20</a>
             <span>пн-вт 9:00 - 21:00</span>
           </div>
-          <a href="#" class="global-btn">Заказать звонок</a>
+          <a href="#leave-popup" class="global-btn popup request-call"
+            >Заказать звонок</a
+          >
         </div>
         <div class="sign-in-wrap">
           <a href="#" class="favorite">
@@ -340,7 +342,7 @@
       </div>
     </header>
 
-    <div class="turnkey-houses">
+    <div class="turnkey-houses" id="turnkey-houses">
       <div class="top-info">
         <div class="info-wrap">
           <img src="img/lines.png" alt="" class="lines" />
@@ -373,10 +375,15 @@
             </h1>
             <p class="subtitle">От идеи до комфортного дома для уютной жизни</p>
             <div class="buttons">
-              <button class="global-btn">Заказать проект</button>
-              <button class="global-btn yellow-btn">
+              <a href="#leave-popup" class="global-btn popup order-project"
+                >Заказать проект</a
+              >
+              <a
+                href="#leave-popup"
+                class="global-btn yellow-btn popup turnkey-solution"
+              >
                 Выбрать готовое решение
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -418,7 +425,7 @@
       </div>
     </div>
 
-    <div class="project-types">
+    <div class="project-types" id="project-types">
       <div class="wrapper">
         <h2 class="black-title">
           <span
@@ -440,7 +447,7 @@
                 class="img"
                 style="background-image: url(img/project-types-img1-1.jpg)"
               ></div>
-              <a href="#" class="style2-btn">Смотреть проекты</a>
+              <a href="#" class="style2-btn see-projects">Смотреть проекты</a>
             </div>
           </div>
           <div class="project-types-item">
@@ -452,7 +459,7 @@
                 class="img"
                 style="background-image: url(img/project-types-img2-2.jpg)"
               ></div>
-              <a href="#" class="style2-btn">Смотреть проекты</a>
+              <a href="#" class="style2-btn see-projects">Смотреть проекты</a>
             </div>
           </div>
           <div class="project-types-item">
@@ -464,7 +471,7 @@
                 class="img"
                 style="background-image: url(img/project-types-img3-3.jpg)"
               ></div>
-              <a href="#" class="style2-btn">Смотреть проекты</a>
+              <a href="#" class="style2-btn see-projects">Смотреть проекты</a>
             </div>
           </div>
           <div class="project-types-item">
@@ -476,15 +483,15 @@
                 class="img"
                 style="background-image: url(img/project-types-img4-4.jpg)"
               ></div>
-              <a href="#" class="style2-btn">Смотреть проекты</a>
+              <a href="#" class="style2-btn see-projects">Смотреть проекты</a>
             </div>
           </div>
         </div>
-        <a href="#" class="global-btn">Смотреть все</a>
+        <a href="#" class="global-btn see-all">Смотреть все</a>
       </div>
     </div>
 
-    <div class="choose-us">
+    <div class="choose-us" id="choose-us">
       <div class="wrapper">
         <div class="title-wrap">
           <div class="navigation-wrap">
@@ -647,7 +654,7 @@
       </div>
     </div>
 
-    <div class="latest-projects">
+    <div class="latest-projects" id="latest-projects">
       <div class="wrapper">
         <h2 class="black-title">
           <span
@@ -754,7 +761,7 @@
             </div>
           </div>
         </div>
-        <a href="#" class="global-btn">ЕЩЕ ПРОЕКТЫ</a>
+        <a href="#" class="global-btn more-projects">ЕЩЕ ПРОЕКТЫ</a>
       </div>
     </div>
 
@@ -785,7 +792,9 @@
                 Мы предоставляем уникальную возможность пожить в готовом доме
                 несколько дней и прочувствовать все нюансы на собственном опыте.
               </p>
-              <a href="#" class="global-btn yellow-btn">Выбрать ДОМ</a>
+              <a href="#" class="global-btn yellow-btn choose-house-btn"
+                >Выбрать ДОМ</a
+              >
             </div>
           </div>
           <div id="map2"></div>
@@ -829,7 +838,7 @@
             бесплатно</span
           >
           <img src="img/lets-idea-img1.svg" alt="" />
-          <a href="#leave-popup" class="idea-btn popup"
+          <a href="#leave-popup" class="idea-btn popup sign-up-btn"
             >Записаться к архитектору</a
           >
         </div>
@@ -846,7 +855,7 @@
             офисе
           </span>
           <img src="img/lets-idea-img2.png" alt="" />
-          <a href="#" class="idea-btn grey">Есть свой проект</a>
+          <a href="#" class="idea-btn grey your-project">Есть свой проект</a>
         </div>
       </div>
     </div>
@@ -927,13 +936,17 @@
           </h2>
           <div class="buttons-wrap">
             <div class="button">
-              <a href="#leave-popup" class="global-btn white-btn popup"
+              <a
+                href="#leave-popup"
+                class="global-btn white-btn popup sign-up-btn"
                 >Записаться к архитектору</a
               >
               <span>Бесплатная консультация в офисе</span>
             </div>
             <div class="button">
-              <a href="#" class="global-btn yellow-btn">Есть свой проект </a>
+              <a href="#" class="global-btn yellow-btn your-project"
+                >Есть свой проект
+              </a>
               <span>Бесплатно рассчитаем стоимость реализации</span>
             </div>
           </div>
@@ -1101,7 +1114,9 @@
               самое то. На дом само собой дали гарантию. Построили за полтора
               месяца.
             </p>
-            <a href="#" class="global-btn yellow-btn">Читать далее на яндекс</a>
+            <a href="#" class="global-btn yellow-btn read-more"
+              >Читать далее на яндекс</a
+            >
           </div>
           <div class="item">
             <div class="top">
@@ -1115,7 +1130,9 @@
               мой проект. Так что они работали индивидуально. Со строительством
               уложились в срок. Внутри красиво - приятно смотреть.
             </p>
-            <a href="#" class="global-btn yellow-btn">Читать далее на zoon</a>
+            <a href="#" class="global-btn yellow-btn read-more"
+              >Читать далее на zoon</a
+            >
           </div>
           <div class="item">
             <div class="top">
@@ -1130,7 +1147,9 @@
               внутренней отделки. Понравилось взаимодействие с одной компанией
               по всем вопросам.
             </p>
-            <a href="#" class="global-btn yellow-btn">Читать далее на яндекс</a>
+            <a href="#" class="global-btn yellow-btn read-more"
+              >Читать далее на яндекс</a
+            >
           </div>
           <div class="item">
             <div class="top">
@@ -1144,7 +1163,9 @@
               мой проект. Так что они работали индивидуально. Со строительством
               уложились в срок. Внутри красиво - приятно смотреть.
             </p>
-            <a href="#" class="global-btn yellow-btn">Читать далее на zoon</a>
+            <a href="#" class="global-btn yellow-btn read-more"
+              >Читать далее на zoon</a
+            >
           </div>
         </div>
       </div>
@@ -1186,7 +1207,9 @@
             <div class="text">Без ввода личных данных и звонков</div>
             <div class="text">Автоматически, прямо на сайте</div>
           </div>
-          <a href="#" class="global-btn yellow-btn">Получить подборку</a>
+          <a href="#" class="global-btn yellow-btn get-selection"
+            >Получить подборку</a
+          >
         </div>
         <div class="take-survey-slider-wrap">
           <div class="slider-navigation">
@@ -1232,7 +1255,7 @@
       </div>
     </div>
 
-    <div class="promotions-offers">
+    <div class="promotions-offers" id="promotions-offers">
       <div class="wrapper">
         <h2 class="black-title">
           <span
@@ -1334,7 +1357,9 @@
             class="phone-number-input"
           />
           <div class="button-wrap">
-            <button class="global-btn yellow-btn">Получить расчет</button>
+            <button class="global-btn yellow-btn get-quote">
+              Получить расчет
+            </button>
             <label for="custom-file-upload" class="append">
               <span class="append-file-name js-value"
                 >Загрузить свой проект</span
@@ -1453,21 +1478,21 @@
           <a href="#" class="footer-logo"><img src="img/logo.svg" alt="" /></a>
           <div class="footer-links">
             <div class="links">
-              <a href="#" class="title">Проекты</a>
+              <a href="#latest-projects" class="title">Проекты</a>
               <a href="#" class="link">Классика</a>
               <a href="#" class="link">Барнхаус</a>
               <a href="#" class="link">Армадико</a>
               <a href="#" class="link">Хайтек</a>
             </div>
             <div class="links">
-              <a href="#" class="title">Портфолио</a>
+              <a href="#turnkey-houses" class="title">Портфолио</a>
               <a href="#" class="link">Классические дома</a>
               <a href="#" class="link">Армадико</a>
               <a href="#" class="link">Барнхаус</a>
               <a href="#" class="link">Хайтек</a>
             </div>
             <div class="links">
-              <a href="#" class="title">О нас</a>
+              <a href="#choose-us" class="title">О нас</a>
               <a href="#" class="link">О компании</a>
               <a href="#" class="link">Отзывы</a>
               <a href="#" class="link">Команда</a>
@@ -1477,11 +1502,11 @@
               <a href="#" class="link">Контакты</a>
             </div>
             <div class="links">
-              <a href="#" class="title">Акции</a>
+              <a href="#promotions-offers" class="title">Акции</a>
               <a href="#" class="link">Акции и специпредложения</a>
             </div>
             <div class="links">
-              <a href="#" class="title">Партнерам</a>
+              <a href="#project-types" class="title">Партнерам</a>
               <a href="#" class="link">Стать партнером</a>
               <a href="#" class="link">Преимущества для партнеров</a>
             </div>
@@ -1509,6 +1534,7 @@
     <script src="js/gsap.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.smooth-scroll.min.js"></script>
     <script src="js/script.js"></script>
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>

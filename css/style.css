@@ -854,6 +854,7 @@ a:focus {
     font-size: 16px;
   }
 }
+
 #leave-popup {
   max-width: 1240px;
   width: 100%;
@@ -3165,16 +3166,16 @@ a:focus {
 }
 
 .promotions-offers {
-  margin: 180px 0;
+  padding: 180px 0;
 }
 @media (max-width: 1024px) {
   .promotions-offers {
-    margin: 130px 0;
+    padding: 130px 0;
   }
 }
 @media (max-width: 767px) {
   .promotions-offers {
-    margin: 70px 0;
+    padding: 70px 0;
   }
 }
 .promotions-offers .wrapper .black-title {
@@ -4353,16 +4354,16 @@ a:focus {
 }
 
 .latest-projects {
-  margin-top: 180px;
+  padding-top: 180px;
 }
 @media (max-width: 1024px) {
   .latest-projects {
-    margin-top: 130px;
+    padding-top: 130px;
   }
 }
 @media (max-width: 767px) {
   .latest-projects {
-    margin-top: 80px;
+    padding-top: 80px;
   }
 }
 .latest-projects .wrapper {
@@ -4570,16 +4571,16 @@ a:focus {
 }
 
 .choose-us {
-  margin-top: 180px;
+  padding-top: 180px;
 }
 @media (max-width: 1024px) {
   .choose-us {
-    margin-top: 130px;
+    padding-top: 130px;
   }
 }
 @media (max-width: 767px) {
   .choose-us {
-    margin-top: 80px;
+    padding-top: 80px;
   }
 }
 .choose-us .wrapper {
@@ -4872,16 +4873,16 @@ a:focus {
 }
 
 .project-types {
-  margin-top: 180px;
+  padding-top: 180px;
 }
 @media (max-width: 1024px) {
   .project-types {
-    margin-top: 130px;
+    padding-top: 130px;
   }
 }
 @media (max-width: 767px) {
   .project-types {
-    margin-top: 80px;
+    padding-top: 80px;
   }
 }
 .project-types .wrapper {

@@ -225,4 +225,8 @@ $(document).ready(function () {
   });
 
   AOS.init();
+
+  $(".footer-links .links .title").smoothScroll({
+    speed: 1000,
+  });
 });
