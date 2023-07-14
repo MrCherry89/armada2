@@ -206,27 +206,17 @@ $(document).ready(function () {
     $(".filters-btn .counter").removeClass("active").text("");
   });
 
-  $(document).on("click", ".header-search button", function (e) {
-    e.preventDefault();
-    var inputValue = $(this)
-      .closest(".header-search")
-      .find("input")
-      .val().length;
-    if (inputValue > 0) {
-      $(".search-resault").addClass("open");
-      $("body, html").addClass("opacity");
-    }
-  });
-
-  $(".search-resault .close").on("click", function () {
-    $(".search-resault").removeClass("open");
-    $("body, html").removeClass("opacity");
-    $(".header-search input").val("");
-  });
-
   AOS.init();
 
   $(".footer-links .links .title").smoothScroll({
     speed: 1000,
+  });
+
+  $(".resault-info-item-wrap .more").on("click", function () {
+    $(this)
+      .closest(".resault-info-item-wrap")
+      .find(".resault-info-item")
+      .removeClass("hidden");
+    $(this).hide();
   });
 });

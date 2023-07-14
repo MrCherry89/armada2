@@ -1700,246 +1700,6 @@ a:focus {
   letter-spacing: -0.03em;
   text-transform: uppercase;
 }
-.header .header-top .search-resault {
-  position: absolute;
-  top: calc(100% + 61px);
-  height: calc(100vh - 60px);
-  padding: 40px 50px;
-  background: white;
-  padding: 50px;
-  left: 49px;
-  width: calc(100% - 98px);
-  z-index: 10;
-  text-align: center;
-  transition: 0.1s;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  transform: translateY(-200%);
-  opacity: 0;
-  visibility: hidden;
-}
-@media (max-width: 1200px) {
-  .header .header-top .search-resault {
-    width: calc(100% - 58px);
-    left: 29px;
-  }
-}
-@media (max-width: 1024px) {
-  .header .header-top .search-resault {
-    height: 100vh;
-    padding: 30px 10px 0;
-    top: 100%;
-    width: 100%;
-    left: 0;
-  }
-}
-.header .header-top .search-resault.open {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
-.header .header-top .search-resault .close {
-  width: 65px;
-  height: 65px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 0 auto 30px;
-}
-@media (max-width: 1024px) {
-  .header .header-top .search-resault .close {
-    width: 44px;
-    height: 44px;
-  }
-}
-.header .header-top .search-resault .close svg {
-  margin: auto;
-  transition: 0.3s;
-  width: 37px;
-  height: 36px;
-}
-@media (max-width: 1024px) {
-  .header .header-top .search-resault .close svg {
-    width: 22px;
-    height: 21px;
-  }
-}
-.header .header-top .search-resault .close svg line {
-  stroke: #eeb116;
-}
-.header .header-top .search-resault .close:hover {
-  background: #eeb116;
-  border-color: #eeb116;
-}
-.header .header-top .search-resault .close:hover svg line {
-  stroke: white;
-}
-.header .header-top .search-resault .resault-text {
-  text-align: center;
-  padding-bottom: 30px;
-  font-size: 32px;
-  font-weight: bold;
-  font-family: "Bebas Neue";
-  color: #514d4e;
-  margin-bottom: 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-@media (max-width: 1024px) {
-  .header .header-top .search-resault .resault-text {
-    font-size: 24px;
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-  }
-}
-.header .header-top .search-resault .resault-info-items {
-  overflow: hidden;
-  height: calc(100% - 180px);
-  text-align: left;
-}
-@media (max-width: 1024px) {
-  .header .header-top .search-resault .resault-info-items {
-    height: calc(100% - 230px);
-  }
-}
-@media (max-width: 767px) {
-  .header .header-top .search-resault .resault-info-items {
-    height: calc(100% - 210px);
-  }
-}
-.header .header-top .search-resault .resault-info-items .scroll {
-  overflow-y: auto;
-  min-height: 100%;
-  height: 100%;
-  padding-right: 20px;
-}
-@media (max-width: 767px) {
-  .header .header-top .search-resault .resault-info-items .scroll {
-    padding-right: 5px;
-  }
-}
-.header .header-top .search-resault .resault-info-items .scroll::-webkit-scrollbar {
-  width: 0px;
-}
-.header .header-top .search-resault .resault-info-items .scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-}
-.header .header-top .search-resault .resault-info-items .scroll::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.8);
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item {
-  width: 100%;
-  margin-bottom: 20px;
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-@media (max-width: 1024px) {
-  .header .header-top .search-resault .resault-info-items .resault-info-item {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-  }
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item h3 {
-  margin-bottom: 20px;
-  font-size: 32px;
-  font-family: "Bebas Neue";
-  color: #514d4e;
-  font-weight: bold;
-}
-@media (max-width: 1024px) {
-  .header .header-top .search-resault .resault-info-items .resault-info-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info .img-wrap {
-  max-width: 200px;
-  height: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: 20px;
-}
-@media (max-width: 767px) {
-  .header .header-top .search-resault .resault-info-items .resault-info-item .info .img-wrap {
-    width: 50%;
-    margin-right: 0;
-    height: auto;
-    max-width: 100%;
-  }
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info .img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap {
-  max-width: 200px;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-@media (max-width: 767px) {
-  .header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap {
-    width: 50%;
-    margin-left: 10px;
-    max-width: 100%;
-  }
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap .list li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 15px;
-  padding-bottom: 2px;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap .list li span {
-  font-family: "SF Pro Display";
-  color: #989898;
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap .list li span.black {
-  color: #000;
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap .price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: auto;
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap .price span {
-  font-weight: bold;
-  font-family: "Bebas Neue";
-  font-size: 32px;
-  margin-right: 5px;
-}
-@media (max-width: 767px) {
-  .header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap .price span {
-    font-size: 24px;
-  }
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap .price span.text {
-  color: #514d4e;
-}
-.header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap .price span.itog, .header .header-top .search-resault .resault-info-items .resault-info-item .info .text-wrap .price span.rub {
-  color: #eeb116;
-}
 @media (min-width: 1025px) {
   .header.fixed {
     padding-bottom: 0;
@@ -2094,6 +1854,239 @@ a:focus {
     transform: translateY(0);
     visibility: visible;
   }
+}
+
+.search-resault {
+  background: white;
+  padding: 0 50px;
+  text-align: center;
+  margin: 80px auto;
+}
+@media (max-width: 1200px) {
+  .search-resault {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 1024px) {
+  .search-resault {
+    padding: 30px 20px 0;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .search-resault {
+    padding: 30px 15px 0;
+    margin-top: 20px;
+  }
+}
+.search-resault .resault-text {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Bebas Neue";
+  color: #514d4e;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1024px) {
+  .search-resault .resault-text {
+    font-size: 24px;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+  }
+}
+.search-resault .resault-info-items {
+  text-align: center;
+}
+.search-resault .resault-info-items .resault-info-item-info {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 1024px) {
+  .search-resault .resault-info-items .resault-info-item-info {
+    grid-template-columns: 1fr;
+  }
+}
+.search-resault .resault-info-items .resault-info-item-info .resault-info-item-wrap.style {
+  position: relative;
+  z-index: 0;
+}
+.search-resault .resault-info-items .resault-info-item-info .resault-info-item-wrap.style:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  height: 100%;
+  width: 1px;
+  background: #e5e5e5;
+}
+.search-resault .resault-info-items .resault-info-item-info .resault-info-item-wrap > h2 {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-family: "Bebas Neue";
+  color: #514d4e;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+}
+.search-resault .resault-info-items .resault-info-item-info .resault-info-item-wrap > h2 .counter {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 500;
+  color: white;
+  min-width: 30px;
+  height: 30px;
+  font-family: "SF Pro Display";
+  font-size: 14px;
+  background: #eeb116;
+  padding: 5px;
+  position: absolute;
+  right: -30px;
+  top: -20px;
+}
+.search-resault .resault-info-items .resault-info-item-info .resault-info-item-wrap .more {
+  font-size: 32px;
+  font-family: "Bebas Neue";
+  font-weight: bold;
+  color: #514d4e;
+  border-bottom: 2px solid #514d4e;
+  display: block;
+  align-self: flex-start;
+}
+@media (max-width: 1024px) {
+  .search-resault .resault-info-items .resault-info-item-info .resault-info-item-wrap .more {
+    font-size: 24px;
+    border-width: 1px;
+  }
+}
+.search-resault .resault-info-items .resault-info-item {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1024px) {
+  .search-resault .resault-info-items .resault-info-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+}
+.search-resault .resault-info-items .resault-info-item.hidden {
+  display: none;
+}
+.search-resault .resault-info-items .resault-info-item h3 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-family: "Bebas Neue";
+  color: #514d4e;
+  font-weight: bold;
+}
+@media (max-width: 1024px) {
+  .search-resault .resault-info-items .resault-info-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+}
+.search-resault .resault-info-items .resault-info-item .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.search-resault .resault-info-items .resault-info-item .info .img-wrap {
+  max-width: 200px;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .search-resault .resault-info-items .resault-info-item .info .img-wrap {
+    width: 50%;
+    margin-right: 0;
+    height: auto;
+    max-width: 100%;
+  }
+}
+.search-resault .resault-info-items .resault-info-item .info .img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.search-resault .resault-info-items .resault-info-item .info .text-wrap {
+  max-width: 200px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@media (max-width: 767px) {
+  .search-resault .resault-info-items .resault-info-item .info .text-wrap {
+    width: 50%;
+    margin-left: 10px;
+    max-width: 100%;
+  }
+}
+.search-resault .resault-info-items .resault-info-item .info .text-wrap .list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 2px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+.search-resault .resault-info-items .resault-info-item .info .text-wrap .list li span {
+  font-family: "SF Pro Display";
+  color: #989898;
+}
+.search-resault .resault-info-items .resault-info-item .info .text-wrap .list li span.black {
+  color: #000;
+}
+.search-resault .resault-info-items .resault-info-item .info .text-wrap .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: auto;
+}
+.search-resault .resault-info-items .resault-info-item .info .text-wrap .price span {
+  font-weight: bold;
+  font-family: "Bebas Neue";
+  font-size: 32px;
+  margin-right: 5px;
+}
+@media (max-width: 767px) {
+  .search-resault .resault-info-items .resault-info-item .info .text-wrap .price span {
+    font-size: 24px;
+  }
+}
+.search-resault .resault-info-items .resault-info-item .info .text-wrap .price span.text {
+  color: #514d4e;
+}
+.search-resault .resault-info-items .resault-info-item .info .text-wrap .price span.itog, .search-resault .resault-info-items .resault-info-item .info .text-wrap .price span.rub {
+  color: #eeb116;
 }
 
 .footer {
@@ -5035,6 +5028,7 @@ a:focus {
 .project-types.catalog-in-project-types {
   margin-top: 100px;
   margin-bottom: 180px;
+  padding-top: 0;
 }
 @media (max-width: 1440px) {
   .project-types.catalog-in-project-types {
