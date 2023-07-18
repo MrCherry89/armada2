@@ -203,6 +203,7 @@ a {
 .black-title {
   @include flex;
   @include dir-col;
+  overflow: hidden;
   @media (max-width: 1200px) {
     font-size: 40px;
   }
@@ -226,6 +227,8 @@ a {
     font-family: $b;
     color: #514d4e;
     display: inline-block;
+    // transition: 1s;
+    // transform: translateY(100%);
     @media (max-width: 1200px) {
       font-size: 40px;
     }
@@ -233,6 +236,11 @@ a {
       font-size: 30px;
     }
   }
+  // &.show {
+  //   span {
+  //     transform: translateY(0);
+  //   }
+  // }
 }
 
 .social-items {

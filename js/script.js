@@ -27,6 +27,24 @@ $(document).ready(function () {
       );
   });
 
+  // gsap.to(".black-title", {
+  //   scrollTrigger: {
+  //     trigger: ".black-title",
+  //     start: "top 90%",
+  //     markers: true,
+  //     toggleClass: "show",
+  //   },
+  // });
+
+  // gsap.to(".black-title2", {
+  //   scrollTrigger: {
+  //     trigger: ".black-title2",
+  //     start: "top 90%",
+  //     markers: true,
+  //     toggleClass: "show",
+  //   },
+  // });
+
   $(".calculate-form").validate({
     rules: {
       phone: {

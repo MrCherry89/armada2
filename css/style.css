@@ -239,6 +239,7 @@ a:focus {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 @media (max-width: 1200px) {
   .black-title {
