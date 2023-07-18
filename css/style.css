@@ -189,6 +189,9 @@ a:focus {
   }
 }
 
+.yellow-title {
+  overflow: hidden;
+}
 @media (max-width: 1200px) {
   .yellow-title {
     font-size: 40px;
@@ -216,7 +219,9 @@ a:focus {
   line-height: 110%;
   font-family: "Bebas Neue";
   color: #eeb116;
-  display: inline-block;
+  display: block;
+  transition: 1s;
+  transform: perspective(2500px) rotateX(-90deg);
 }
 @media (max-width: 1200px) {
   .yellow-title span,
@@ -229,6 +234,10 @@ a:focus {
 .yellow-title p {
     font-size: 30px;
   }
+}
+.yellow-title.show span,
+.yellow-title.show p {
+  transform: perspective(2500px) rotateX(0);
 }
 
 .black-title {
@@ -272,6 +281,8 @@ a:focus {
   font-family: "Bebas Neue";
   color: #514d4e;
   display: inline-block;
+  transition: 1s;
+  transform: perspective(2500px) rotateX(-90deg);
 }
 @media (max-width: 1200px) {
   .black-title span,
@@ -284,6 +295,10 @@ a:focus {
 .black-title p {
     font-size: 30px;
   }
+}
+.black-title.show span,
+.black-title.show p {
+  transform: perspective(2500px) rotateX(0);
 }
 
 .social-items {
