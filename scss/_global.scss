@@ -171,7 +171,6 @@ a {
 }
 
 .yellow-title {
-  overflow: hidden;
   @media (max-width: 1200px) {
     font-size: 40px;
   }
@@ -191,9 +190,7 @@ a {
     line-height: 110%;
     font-family: $b;
     color: $yellow;
-    display: block;
-    transition: 1s;
-    transform: perspective(2500px) rotateX(-90deg);
+    display: inline-block;
     @media (max-width: 1200px) {
       font-size: 40px;
     }
@@ -201,18 +198,11 @@ a {
       font-size: 30px;
     }
   }
-  &.show {
-    span,
-    p {
-      transform: perspective(2500px) rotateX(0);
-    }
-  }
 }
 
 .black-title {
   @include flex;
   @include dir-col;
-  overflow: hidden;
   @media (max-width: 1200px) {
     font-size: 40px;
   }
@@ -236,19 +226,11 @@ a {
     font-family: $b;
     color: #514d4e;
     display: inline-block;
-    transition: 1s;
-    transform: perspective(2500px) rotateX(-90deg);
     @media (max-width: 1200px) {
       font-size: 40px;
     }
     @media (max-width: 767px) {
       font-size: 30px;
-    }
-  }
-  &.show {
-    span,
-    p {
-      transform: perspective(2500px) rotateX(0);
     }
   }
 }

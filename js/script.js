@@ -27,34 +27,6 @@ $(document).ready(function () {
       );
   });
 
-  gsap.utils.toArray(".black-title").forEach((box) => {
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: box,
-        start: "top 90%",
-        toggleClass: "show",
-      },
-    });
-
-    tl.to(box, {
-      duration: 1,
-    });
-  });
-
-  gsap.utils.toArray(".yellow-title").forEach((box2) => {
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: box2,
-        start: "top 90%",
-        toggleClass: "show",
-      },
-    });
-
-    tl.to(box2, {
-      duration: 1,
-    });
-  });
-
   $(".calculate-form").validate({
     rules: {
       phone: {
