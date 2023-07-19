@@ -52,6 +52,36 @@ $(document).ready(function () {
     },
   });
 
+  $(".accordion-list-item .item-heading").on("click", function (e) {
+    e.preventDefault();
+    if ($(this).find(".icon").hasClass("rotate")) {
+      $(this).find(".icon").removeClass("rotate");
+    } else {
+      $(this)
+        .closest(".accordion-list-item")
+        .find(".icon")
+        .removeClass("rotate");
+      $(this).find(".icon").addClass("rotate");
+    }
+    $(this).closest(".accordion-list-item").removeClass("opened");
+    $(this)
+      .closest(".accordion-list-item")
+      .find(".item-body")
+      .removeClass("active");
+    $(this)
+      .closest(".accordion-list-item")
+      .find(".item-body")
+      .addClass("active");
+    $(this).closest(".accordion-list-item").addClass("opened");
+    $(this)
+      .closest(".accordion-list-item")
+      .find(".item-body:not(.active)")
+      .slideUp();
+    $(this).closest(".accordion-list-item:not(.opened)").removeClass("active");
+    $(this).closest(".accordion-list-item").find(".item-body").slideToggle();
+    $(this).closest(".accordion-list-item").toggleClass("active");
+  });
+
   $(".calculate-form").on("submit", function (e) {
     e.preventDefault();
     if ($(".calculate-form").valid()) {
@@ -125,6 +155,15 @@ $(document).ready(function () {
     nextArrow: $(".reliability-slider-wrap .slider-navigation .slick-next"),
   });
 
+  $(".floor-plan-slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    variableWidth: true,
+    speed: 1000,
+    dots: false,
+  });
+
   $(".rating-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -147,6 +186,113 @@ $(document).ready(function () {
       },
     ],
   });
+
+  // $(".gallery-slider").slick({
+  //   arrows: false,
+  //   speed: 1000,
+  //   dots: false,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   responsive: [
+  //     {
+  //       breakpoint: 9999,
+  //       settings: "unslick",
+  //     },
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         variableWidth: true,
+  //       },
+  //     },
+  //   ],
+  // });
+
+  // $(".gallery-slider").slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   variableWidth: true,
+  //   responsive: [
+  //     {
+  //       breakpoint: 9999,
+  //       settings: "unslick",
+  //     },
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //       },
+  //     },
+  //   ],
+  // });
+
+  $slickGreen = false;
+  function greenSlider() {
+    if ($(window).width() < 1025) {
+      if (!$slickGreen) {
+        $(".gallery-slider").slick({
+          dots: false,
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true,
+          infinite: true,
+        });
+        $slickGreen = true;
+      }
+    } else if ($(window).width() > 1025) {
+      if ($slickGreen) {
+        $(".gallery-slider").slick("unslick");
+        $slickGreen = false;
+      }
+    }
+  }
+
+  greenSlider();
+
+  $(window).on("resize", function () {
+    greenSlider();
+  });
+
+  if (!$(".project-slider").hasClass("slick-initialized")) {
+    $(".project-slider").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      fade: true,
+      arrows: false,
+      asNavFor: ".project-slider-thumbnails",
+    });
+  }
+
+  if (!$(".project-slider-thumbnails").hasClass("slick-initialized")) {
+    $(".project-slider-thumbnails").slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: true,
+      focusOnSelect: true,
+      asNavFor: ".project-slider",
+      nextArrow: $(".project-slider-thumbnails-wrap .arrow-next"),
+      prevArrow: $(".project-slider-thumbnails-wrap .arrow-prev"),
+      responsive: [
+        {
+          breakpoint: 1441,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+      ],
+    });
+  }
 
   $(window).scroll(function () {
     var header = $(".header"),
