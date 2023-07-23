@@ -1922,10 +1922,10 @@ a {
   @include flex;
   padding: 40px 0;
   border-top: 1px solid rgba(black, 0.1);
+  position: relative;
   @media (max-width: 1024px) {
     @include flex-wrap;
     padding: 20px 0 30px;
-    position: relative;
   }
   .image-style {
     width: 20%;
@@ -1936,12 +1936,17 @@ a {
     @include flex;
     @media (max-width: 1400px) {
       position: absolute;
-      top: 20px;
+      bottom: 20px;
       right: 0;
-      width: calc(35% - 20px);
+      width: 17vw;
     }
     @media (max-width: 1024px) {
       padding: 20px;
+      top: 20px;
+      bottom: 0;
+      width: 30%;
+      height: 200px;
+      min-height: auto;
     }
     @media (max-width: 767px) {
       display: none;
@@ -1961,6 +1966,9 @@ a {
     @media (max-width: 1600px) {
       padding-right: 3vw;
       padding-left: 2vw;
+    }
+    @media (max-width: 1400px) {
+      width: 32%;
     }
     @media (max-width: 1024px) {
       width: 100%;
@@ -2601,4 +2609,34 @@ a {
       }
     }
   }
+}
+
+.panorama_container {
+  width: 100%;
+  height: 98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#panorama {
+  width: 50vw;
+  height: 50vh;
+}
+
+.section_container {
+  display: flex;
+  width: 50vw;
+  justify-content: space-between;
+}
+
+.sections {
+  display: grid;
+  place-items: center;
+  border: 1px solid lightgrey;
+  height: 50px;
+  width: 100px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 10px;
 }
