@@ -1,4 +1,57 @@
 $(document).ready(function () {
+  const images = ["./img/about-img1.jpg", "./img/about-img2.jpg"];
+  let currentIndex = 0;
+  let cumulativeDistance = 0;
+  let hoverImage = null;
+
+  const container = document.querySelector(".container");
+
+  function showHoverImage() {
+    if (!hoverImage) {
+      hoverImage = document.createElement("img");
+      hoverImage.src = images[currentIndex];
+      hoverImage.classList.add("hover-image");
+      container.appendChild(hoverImage);
+    }
+
+    container.addEventListener("mousemove", moveHoverImage);
+  }
+
+  function removeHoverImage() {
+    if (hoverImage) {
+      container.removeChild(hoverImage);
+      hoverImage = null;
+    }
+    container.removeEventListener("mousemove", moveHoverImage);
+    cumulativeDistance = 0;
+    currentIndex = 0;
+  }
+
+  function moveHoverImage(event) {
+    if (!hoverImage) return;
+    const containerRect = container.getBoundingClientRect();
+    const x = event.clientX - containerRect.left;
+    const y = event.clientY - containerRect.top;
+    if (x < 0 || x > containerRect.width || y < 0 || y > containerRect.height) {
+      removeHoverImage();
+      return;
+    }
+    cumulativeDistance +=
+      Math.abs(x - hoverImage.offsetLeft) + Math.abs(y - hoverImage.offsetTop);
+
+    if (cumulativeDistance >= 200) {
+      cumulativeDistance = 0;
+      currentIndex = (currentIndex + 1) % images.length;
+      hoverImage.src = images[currentIndex];
+    }
+
+    hoverImage.style.left = `${x}px`;
+    hoverImage.style.top = `${y}px`;
+  }
+
+  container.addEventListener("mouseenter", showHoverImage);
+  container.addEventListener("mouseleave", removeHoverImage);
+
   $(".slider").on(
     "init reInit afterChange",
     function (event, slick, currentSlide, nextSlide) {
@@ -53,6 +106,17 @@ $(document).ready(function () {
         },
       },
     ],
+  });
+
+  $(".company-life-slider").slick({
+    dots: false,
+    arrows: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    variableWidth: true,
+    prevArrow: $(".company-life .top-info .slider-navigation .slick-prev"),
+    nextArrow: $(".company-life .top-info .slider-navigation .slick-next"),
   });
 
   $(".second-slider").on(
@@ -297,41 +361,6 @@ $(document).ready(function () {
     fixedContentPos: false,
   });
 
-  // $(".layout-slider").slick({
-  //   slidesToShow: 2,
-  //   slidesToScroll: 1,
-  //   dots: false,
-  //   infinite: true,
-  //   arrows: false,
-  // });
-
-  // $(".layout-slider2").slick({
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   dots: false,
-  //   arrows: true,
-  //   prevArrow: $(".layout-slider2-wrap .slider-navigation .slick-prev"),
-  //   nextArrow: $(".layout-slider2-wrap .slider-navigation .slick-next"),
-  // });
-
-  // $(".layout-slider3").slick({
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   dots: false,
-  //   arrows: true,
-  //   prevArrow: $(".layout-slider3-wrap .slider-navigation .slick-prev"),
-  //   nextArrow: $(".layout-slider3-wrap .slider-navigation .slick-next"),
-  // });
-
-  // $(".layout-slider4").slick({
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   dots: false,
-  //   arrows: true,
-  //   prevArrow: $(".layout-slider4-wrap .slider-navigation .slick-prev"),
-  //   nextArrow: $(".layout-slider4-wrap .slider-navigation .slick-next"),
-  // });
-
   $(".choose-us-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -460,6 +489,34 @@ $(document).ready(function () {
 
   $(window).on("resize", function () {
     greenSlider2();
+  });
+
+  $slickGreen3 = false;
+  function greenSlider3() {
+    if ($(window).width() < 1441) {
+      if (!$slickGreen3) {
+        $(".popular-publications-slider").slick({
+          dots: false,
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true,
+          infinite: true,
+        });
+        $slickGreen3 = true;
+      }
+    } else if ($(window).width() > 1441) {
+      if ($slickGreen3) {
+        $(".popular-publications-slider").slick("unslick");
+        $slickGreen3 = false;
+      }
+    }
+  }
+
+  greenSlider3();
+
+  $(window).on("resize", function () {
+    greenSlider3();
   });
 
   if (!$(".project-slider").hasClass("slick-initialized")) {
