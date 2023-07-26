@@ -171,6 +171,59 @@
   }
 }
 
+.completed-projects {
+  .wrapper {
+    background: $grey;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    .black-title {
+      text-align: center;
+      margin-bottom: 70px;
+      @media (max-width: 1024px) {
+        margin-bottom: 40px;
+      }
+      @media (max-width: 767px) {
+        margin-bottom: 20px;
+      }
+    }
+    .completed-projects-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 50px;
+      @media (max-width: 1400px) {
+        gap: 20px;
+      }
+      @media (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+      .completed-projects-item {
+        img {
+          width: 100%;
+        }
+        span {
+          margin-top: 20px;
+          font-family: $b;
+          font-size: 32px;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: $black;
+          display: block;
+          @media (max-width: 1400px) {
+            font-size: 28px;
+          }
+          @media (max-width: 1200px) {
+            font-size: 24px;
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .calculate-cost-project {
   background: $grey;
   padding: 45px 50px;
@@ -260,6 +313,17 @@
         margin-top: 30px;
         width: 94%;
       }
+    }
+  }
+  &.calculate-page-project {
+    margin: 180px 0;
+    margin-left: 50px;
+    @media (max-width: 1200px) {
+      margin: 120px 0;
+      margin-left: 30px;
+    }
+    @media (max-width: 1024px) {
+      margin: 80px 0;
     }
   }
 }
@@ -2629,6 +2693,13 @@
       margin: 50px 0 70px;
     }
   }
+  &.project-page-block {
+    .wrapper {
+      .style3-btn {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .project-map {
@@ -3914,16 +3985,6 @@
           }
         }
       }
-    }
-  }
-}
-
-.tour-3d {
-  margin: 180px 0;
-  .wrapper {
-    .black-title {
-      margin-bottom: 70px;
-      text-align: center;
     }
   }
 }

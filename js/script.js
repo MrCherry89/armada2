@@ -1,4 +1,71 @@
 $(document).ready(function () {
+  $(".slider").on(
+    "init reInit afterChange",
+    function (event, slick, currentSlide, nextSlide) {
+      var $elSlide = $(slick.$slides[currentSlide]);
+
+      var sliderObj = $elSlide.closest(".slick-slider");
+
+      if (sliderObj.hasClass("second-slider")) {
+        return;
+      }
+
+      var pager = (currentSlide ? currentSlide : 0) + 1 + "/6";
+      $(".page-nav").text("CURRENT SLIDE : " + pager);
+    }
+  );
+
+  $(".slider").slick({
+    dots: false,
+    arrows: false,
+    infinite: false,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          dots: false,
+          arrows: false,
+          infinite: false,
+          variableWidth: true,
+          slidesToShow: 1,
+        },
+      },
+    ],
+  });
+
+  $(".second-slider").slick({
+    dots: false,
+    arrows: true,
+    infinite: false,
+    prevArrow: $(".slider .item .slider-wrap .slider-navigation .slick-prev"),
+    nextArrow: $(".slider .item .slider-wrap .slider-navigation .slick-next"),
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          dots: false,
+          arrows: false,
+          infinite: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+
+  $(".second-slider").on(
+    "touchstart touchmove mousemove mouseenter",
+    function (e) {
+      $(".slider").slick("slickSetOption", "swipe", false, false);
+    }
+  );
+
+  $(".second-slider").on("touchend mouseover mouseout", function (e) {
+    $(".slider").slick("slickSetOption", "swipe", true, false);
+  });
+
   gsap.utils.toArray(".comparisonSection").forEach((section) => {
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -58,6 +125,95 @@ $(document).ready(function () {
     },
   });
 
+  $("#leave-agree").on("change", function (e) {
+    if ($("#leave-agree").prop("checked")) {
+      $(".leave-form > .style2-btn").attr("disabled", false);
+      $(".leave-form > .style2-btn").removeClass("btn-deactivate");
+    } else {
+      $(".leave-form > .style2-btn").attr("disabled", true);
+      $(".leave-form > .style2-btn").addClass("btn-deactivate");
+    }
+  });
+
+  $("#calculate-agree").on("change", function (e) {
+    if ($("#calculate-agree").prop("checked")) {
+      $(".get-quote").attr("disabled", false);
+      $(".get-quote").removeClass("btn-deactivate");
+    } else {
+      $(".get-quote").attr("disabled", true);
+      $(".get-quote").addClass("btn-deactivate");
+    }
+  });
+
+  $(".leave-form").on("submit", function (e) {
+    e.preventDefault();
+
+    if ($(".leave-form").valid()) {
+      formData = new FormData();
+      name = $(".leave-form input[name='name']").val();
+      phone = $(".leave-form input[name='phone']").val();
+
+      formData.append("name", name);
+      formData.append("phone", phone);
+
+      $.ajax({
+        type: "POST",
+        url: "/ajax/feedback.php",
+        data: formData,
+        processData: false,
+        dataType: "json",
+        contentType: false,
+        success: function (data) {
+          $.magnificPopup.open({
+            items: {
+              src: "#sent-popup",
+            },
+            type: "inline",
+          });
+        },
+        error: function (jqXHR, textStatus, error) {},
+      });
+    }
+  });
+
+  $(".calculate-form").on("submit", function (e) {
+    e.preventDefault();
+
+    if ($(".calculate-form").valid()) {
+      formData = new FormData();
+      name = $(".calculate-form input[name='name']").val();
+      phone = $(".calculate-form input[name='phone']").val();
+
+      formData.append("name", name);
+      formData.append("phone", phone);
+      $.each(
+        $(".calculate-form input[name='attachment-file']")[0].files,
+        function (key, input) {
+          formData.append("file[]", input);
+        }
+      );
+
+      $.ajax({
+        type: "POST",
+        url: "/ajax/feedback.php",
+        data: formData,
+        processData: false,
+        dataType: "json",
+        contentType: false,
+        success: function (data) {
+          $.magnificPopup.open({
+            items: {
+              src: "#sent-popup",
+            },
+            type: "inline",
+          });
+          $(".calculate-form").reset();
+        },
+        error: function (jqXHR, textStatus, error) {},
+      });
+    }
+  });
+
   $(".accordion-list-item .item-heading").on("click", function (e) {
     e.preventDefault();
     if ($(this).find(".icon").hasClass("rotate")) {
@@ -100,6 +256,19 @@ $(document).ready(function () {
     }
   });
 
+  $(".carousel").slick();
+
+  $(".carousel2").slick();
+
+  $(".carousel2").on("mousedown mouseup", function () {
+    $(".carousel").slick("slickGoTo", 1);
+  });
+
+  $(".section_container .sections").on("click", function () {
+    $(".section_container .sections").removeClass("active");
+    $(this).addClass("active");
+  });
+
   $(".select-wrap select").select2({
     minimumResultsForSearch: 6,
   });
@@ -118,6 +287,50 @@ $(document).ready(function () {
     $(".js-value").text(value);
     $(".append").addClass("download");
   });
+
+  $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
+    disableOn: 700,
+    type: "iframe",
+    mainClass: "mfp-fade",
+    removalDelay: 160,
+    preloader: false,
+    fixedContentPos: false,
+  });
+
+  // $(".layout-slider").slick({
+  //   slidesToShow: 2,
+  //   slidesToScroll: 1,
+  //   dots: false,
+  //   infinite: true,
+  //   arrows: false,
+  // });
+
+  // $(".layout-slider2").slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   dots: false,
+  //   arrows: true,
+  //   prevArrow: $(".layout-slider2-wrap .slider-navigation .slick-prev"),
+  //   nextArrow: $(".layout-slider2-wrap .slider-navigation .slick-next"),
+  // });
+
+  // $(".layout-slider3").slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   dots: false,
+  //   arrows: true,
+  //   prevArrow: $(".layout-slider3-wrap .slider-navigation .slick-prev"),
+  //   nextArrow: $(".layout-slider3-wrap .slider-navigation .slick-next"),
+  // });
+
+  // $(".layout-slider4").slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   dots: false,
+  //   arrows: true,
+  //   prevArrow: $(".layout-slider4-wrap .slider-navigation .slick-prev"),
+  //   nextArrow: $(".layout-slider4-wrap .slider-navigation .slick-next"),
+  // });
 
   $(".choose-us-slider").slick({
     slidesToShow: 1,
@@ -219,6 +432,34 @@ $(document).ready(function () {
 
   $(window).on("resize", function () {
     greenSlider();
+  });
+
+  $slickGreen2 = false;
+  function greenSlider2() {
+    if ($(window).width() < 1025) {
+      if (!$slickGreen2) {
+        $(".customer-reviews-slider").slick({
+          dots: false,
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true,
+          infinite: true,
+        });
+        $slickGreen2 = true;
+      }
+    } else if ($(window).width() > 1025) {
+      if ($slickGreen2) {
+        $(".customer-reviews-slider").slick("unslick");
+        $slickGreen2 = false;
+      }
+    }
+  }
+
+  greenSlider2();
+
+  $(window).on("resize", function () {
+    greenSlider2();
   });
 
   if (!$(".project-slider").hasClass("slick-initialized")) {
