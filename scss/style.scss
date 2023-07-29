@@ -3643,6 +3643,8 @@
         .our-team-item {
           position: relative;
           margin-left: -30px;
+          z-index: 0;
+          transition: 0.3s;
           @media (max-width: 767px) {
             margin-left: -33px;
           }
@@ -3695,6 +3697,7 @@
             }
           }
           &:hover {
+            z-index: 1;
             .info {
               opacity: 1;
               visibility: visible;
@@ -4003,7 +4006,7 @@
       width: 100%;
       .item {
         width: 100%;
-        height: 44vw;
+        height: 37vw;
         @media (max-width: 767px) {
           height: 55vw;
         }
@@ -4016,7 +4019,6 @@
     }
     .slider-info {
       @include flex;
-      @include align-center;
       padding: 50px 0;
       border-bottom: 1px solid $grey;
       @media (max-width: 1440px) {
@@ -4396,4 +4398,188 @@
   }
 }
 
+#video-popup {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  .popup-body {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    padding-top: 40px;
+    .mfp-close {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      opacity: 0.5;
+      @media (max-width: 1440px) {
+        width: 24px;
+        height: 24px;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      &:before {
+        content: none;
+      }
+      &:after {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background: url(../img/close-popup.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        @media (max-width: 1440px) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    video {
+      width: 100%;
+    }
+  }
+}
 
+.project-in-video {
+  margin-bottom: 180px;
+  @media (max-width: 1024px) {
+    margin-bottom: 120px;
+  }
+  @media (max-width: 767px) {
+    @include flex;
+    margin-bottom: 80px;
+    flex-direction: column-reverse;
+  }
+  .video {
+    position: relative;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(black, 0.4);
+    }
+    .watch {
+      @include flex;
+      @include align-center;
+      position: absolute;
+      bottom: 70px;
+      right: 50px;
+      z-index: 40;
+      @media (max-width: 1200px) {
+        bottom: 50px;
+        right: 30px;
+      }
+      @media (max-width: 767px) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: inherit;
+        right: inherit;
+      }
+      span {
+        color: white;
+        font-family: $sf;
+        font-size: 26px;
+        font-weight: 500;
+        @media (max-width: 1200px) {
+          font-size: 22px;
+        }
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+      .play {
+        margin-left: 12px;
+        @media (max-width: 1200px) {
+          width: 70px;
+          height: 70px;
+          img {
+            width: 100%;
+          }
+        }
+        @media (max-width: 767px) {
+          width: 50px;
+          height: 50px;
+          margin: 0;
+        }
+      }
+    }
+  }
+  video {
+    width: 100%;
+  }
+  .wrapper {
+    position: relative;
+    z-index: 1;
+
+    .info {
+      position: absolute;
+      z-index: 1;
+      bottom: 70px;
+      left: 50px;
+      max-width: 800px;
+      width: 100%;
+      @media (max-width: 1440px) {
+        max-width: 100%;
+        width: 42vw;
+      }
+      @media (max-width: 1200px) {
+        left: 30px;
+        bottom: 50px;
+      }
+      @media (max-width: 767px) {
+        position: static;
+        padding: 30px 0;
+        max-width: 360px;
+        width: 100%;
+      }
+      h1 {
+        @media (max-width: 767px) {
+          max-width: 290px;
+        }
+        span {
+          display: block;
+          color: #efedee;
+          font-size: 96px;
+          font-family: $b;
+          text-transform: uppercase;
+          @media (max-width: 1440px) {
+            font-size: 5vw;
+          }
+          @media (max-width: 767px) {
+            font-size: 34px;
+            color: $black;
+          }
+        }
+      }
+      p {
+        max-width: 670px;
+        color: #efedee;
+        font-family: $sf;
+        font-size: 26px;
+        margin-top: 30px;
+        @media (max-width: 1440px) {
+          font-size: 1.8vw;
+        }
+        @media (max-width: 767px) {
+          font-size: 16px;
+          margin-top: 20px;
+          color: $black;
+        }
+      }
+    }
+  }
+}

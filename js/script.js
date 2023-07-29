@@ -1,57 +1,4 @@
 $(document).ready(function () {
-  const images = ["./img/about-img1.jpg", "./img/about-img2.jpg"];
-  let currentIndex = 0;
-  let cumulativeDistance = 0;
-  let hoverImage = null;
-
-  const container = document.querySelector(".container");
-
-  function showHoverImage() {
-    if (!hoverImage) {
-      hoverImage = document.createElement("img");
-      hoverImage.src = images[currentIndex];
-      hoverImage.classList.add("hover-image");
-      container.appendChild(hoverImage);
-    }
-
-    container.addEventListener("mousemove", moveHoverImage);
-  }
-
-  function removeHoverImage() {
-    if (hoverImage) {
-      container.removeChild(hoverImage);
-      hoverImage = null;
-    }
-    container.removeEventListener("mousemove", moveHoverImage);
-    cumulativeDistance = 0;
-    currentIndex = 0;
-  }
-
-  function moveHoverImage(event) {
-    if (!hoverImage) return;
-    const containerRect = container.getBoundingClientRect();
-    const x = event.clientX - containerRect.left;
-    const y = event.clientY - containerRect.top;
-    if (x < 0 || x > containerRect.width || y < 0 || y > containerRect.height) {
-      removeHoverImage();
-      return;
-    }
-    cumulativeDistance +=
-      Math.abs(x - hoverImage.offsetLeft) + Math.abs(y - hoverImage.offsetTop);
-
-    if (cumulativeDistance >= 200) {
-      cumulativeDistance = 0;
-      currentIndex = (currentIndex + 1) % images.length;
-      hoverImage.src = images[currentIndex];
-    }
-
-    hoverImage.style.left = `${x}px`;
-    hoverImage.style.top = `${y}px`;
-  }
-
-  container.addEventListener("mouseenter", showHoverImage);
-  container.addEventListener("mouseleave", removeHoverImage);
-
   $(".slider").on(
     "init reInit afterChange",
     function (event, slick, currentSlide, nextSlide) {
@@ -135,7 +82,6 @@ $(document).ready(function () {
       scrollTrigger: {
         trigger: ".comparisonSection",
         start: "center center",
-        // makes the height of the scrolling (while pinning) match the width, thus the speed remains constant (vertical/horizontal)
         end: () => "+=" + section.offsetWidth,
         scrub: true,
         pin: true,
@@ -143,19 +89,16 @@ $(document).ready(function () {
       },
       defaults: { ease: "none" },
     });
-    // animate the container one way...
     tl.fromTo(
       section.querySelector(".afterImage"),
       { xPercent: 100, x: 0 },
       { xPercent: 0 }
-    )
-      // ...and the image the opposite way (at the same time)
-      .fromTo(
-        section.querySelector(".afterImage img"),
-        { xPercent: -100, x: 0 },
-        { xPercent: 0 },
-        0
-      );
+    ).fromTo(
+      section.querySelector(".afterImage img"),
+      { xPercent: -100, x: 0 },
+      { xPercent: 0 },
+      0
+    );
   });
 
   $(".slider-info-wrap p .more").on("click", function (e) {
@@ -350,6 +293,25 @@ $(document).ready(function () {
     var value = $("input[type='file']").val();
     $(".js-value").text(value);
     $(".append").addClass("download");
+  });
+
+  $(".play").magnificPopup({
+    type: "inline",
+    mainClass: "mfp-fade",
+    callbacks: {
+      open: function () {
+        var videoWrap = $(this)[0].content;
+        var video = $(videoWrap).find("video");
+
+        video.get(0).play();
+      },
+      close: function () {
+        var videoWrap = $(this)[0].content;
+        var video = $(videoWrap).find("video");
+        video.get(0).pause();
+        video.get(0).currentTime = 0;
+      },
+    },
   });
 
   $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
@@ -556,6 +518,108 @@ $(document).ready(function () {
     });
   }
 
+  $(".slider-content").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: false,
+    infinite: true,
+    fade: true,
+    asNavFor: ".slider-thumb",
+    arrows: true,
+    nextArrow: $(".project-in-slider-wrap .arrow-next"),
+    prevArrow: $(".project-in-slider-wrap .arrow-prev"),
+  });
+  $(".slider-thumb").slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: ".slider-content",
+    dots: false,
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+  });
+
+  $(".slider-content2").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: false,
+    infinite: true,
+    fade: true,
+    asNavFor: ".slider-thumb2",
+    arrows: true,
+    nextArrow: $(".project-in-slider-wrap2 .arrow-next"),
+    prevArrow: $(".project-in-slider-wrap2 .arrow-prev"),
+  });
+  $(".slider-thumb2").slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: ".slider-content2",
+    dots: false,
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+  });
+
+  $(".slider-content3").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: false,
+    infinite: true,
+    fade: true,
+    asNavFor: ".slider-thumb3",
+    arrows: true,
+    nextArrow: $(".project-in-slider-wrap3 .arrow-next"),
+    prevArrow: $(".project-in-slider-wrap3 .arrow-prev"),
+  });
+  $(".slider-thumb3").slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: ".slider-content3",
+    dots: false,
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+  });
+
   $(window).scroll(function () {
     var header = $(".header"),
       scroll = $(window).scrollTop();
@@ -571,7 +635,6 @@ $(document).ready(function () {
     $("body, html").toggleClass("overflow");
   });
 
-  // Banner image animation
   var anmitaeOnHover = true;
   var timer;
 

@@ -834,7 +834,7 @@
             <span>обзор от архитектора</span>
             <div class="video-wrap">
               <img src="img/video-img1.jpg" alt="" class="video-img" />
-              <a href="https://vimeo.com/45830194" class="play popup-vimeo"
+              <a href="#video-popup" class="play popup"
                 ><img src="img/play-video.svg" alt=""
               /></a>
             </div>
@@ -848,7 +848,7 @@
             <span>обзор от архитектора</span>
             <div class="video-wrap">
               <img src="img/video-img2.jpg" alt="" class="video-img" />
-              <a href="https://vimeo.com/45830194" class="play popup-vimeo"
+              <a href="#video-popup" class="play popup"
                 ><img src="img/play-video.svg" alt=""
               /></a>
             </div>
@@ -1202,6 +1202,15 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+
+    <div id="video-popup" class="mfp-hide white-popup mfp-with-anim main-popup">
+      <div class="popup-body">
+        <button title="Close (Esc)" type="button" class="mfp-close"></button>
+        <video preload="auto" autoplay="true" controls="true">
+          <source src="videos/video.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   </body>

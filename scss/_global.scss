@@ -605,6 +605,10 @@ a {
         }
         .img-wrap {
           position: relative;
+          height: 17vw;
+          @media (max-width: 767px) {
+            height: 210px;
+          }
           .play {
             position: absolute;
             top: 50%;
@@ -614,6 +618,8 @@ a {
           }
           img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
             @media (max-width: 767px) {
               max-height: 230px;
             }
@@ -644,11 +650,14 @@ a {
             color: $black;
             font-size: 32px;
             text-transform: uppercase;
+            min-height: 68px;
             @media (max-width: 1440px) {
               font-size: 24px;
+              min-height: 50px;
             }
             @media (max-width: 767px) {
               font-size: 20px;
+              min-height: auto;
             }
           }
         }
@@ -4109,5 +4118,242 @@ a {
   }
   @media (max-width: 767px) {
     display: none;
+  }
+}
+
+.project-in-item {
+  margin-bottom: 180px;
+  @media (max-width: 1200px) {
+    margin-bottom: 120px;
+  }
+  @media (max-width: 1024px) {
+    margin-bottom: 80px;
+  }
+  .wrapper {
+    @include flex;
+    @include justify-between;
+    @media (max-width: 1024px) {
+      @include flex-wrap;
+    }
+    .project-in-slider-wrap,
+    .project-in-slider-wrap2,
+    .project-in-slider-wrap3 {
+      position: relative;
+      width: calc((100% - 25px) / 2);
+      @media (max-width: 1440px) {
+        width: calc((100% - 10px) / 2);
+      }
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+      .arrow {
+        position: absolute;
+        z-index: 10;
+        top: 40%;
+        @media (max-width: 1440px) {
+          top: 33%;
+        }
+        @media (max-width: 1024px) {
+          top: 36%;
+        }
+        @media (max-width: 767px) {
+          width: 16px;
+          top: 32%;
+          img {
+            width: 100%;
+          }
+        }
+        &.arrow-prev {
+          left: 15px;
+        }
+        &.arrow-next {
+          right: 15px;
+        }
+      }
+      .slider-thumb,
+      .slider-thumb2,
+      .slider-thumb3 {
+        margin-top: 20px;
+        .item {
+          margin: 0 5px;
+          overflow: hidden;
+          height: 7vw;
+          @media (max-width: 1024px) {
+            height: 12vw;
+          }
+          @media (max-width: 767px) {
+            height: 17vw;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .slider-content,
+      .slider-content2,
+      .slider-content3 {
+        .item {
+          height: 34vw;
+          overflow: hidden;
+          @media (max-width: 1440px) {
+            height: 40vw;
+          }
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .project-in-slider-info {
+      width: calc((100% - 25px) / 2);
+      @include flex;
+      @include dir-col;
+      @media (max-width: 1440px) {
+        width: calc((100% - 10px) / 2);
+      }
+      @media (max-width: 1024px) {
+        width: 100%;
+        margin-top: 50px;
+      }
+      h2 {
+        margin-bottom: 50px;
+        @media (max-width: 1440px) {
+          margin-top: -10px;
+          margin-bottom: 30px;
+        }
+        span {
+          display: block;
+          font-family: $b;
+          color: $black;
+          text-transform: uppercase;
+          font-size: 72px;
+
+          @media (max-width: 1440px) {
+            font-size: 60px;
+          }
+          @media (max-width: 1024px) {
+            font-size: 40px;
+          }
+        }
+      }
+      .info-items {
+        @include flex;
+        @include flex-wrap;
+        margin-bottom: 20px;
+        @media (max-width: 1440px) {
+          margin-bottom: 10px;
+        }
+        .info-item {
+          @include flex;
+          @include align-center;
+          @include justify-center;
+          margin-right: 20px;
+          margin-bottom: 20px;
+          border-radius: 10px;
+          padding: 15px 20px;
+          background: $grey;
+          @media (max-width: 1440px) {
+            padding: 10px 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+          }
+          @media (max-width: 767px) {
+            padding: 6px 10px;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          span {
+            font-weight: bold;
+            color: #726f6f;
+            font-size: 22px;
+            font-family: $b;
+            @media (max-width: 767px) {
+              font-size: 18px;
+            }
+          }
+          b {
+            font-weight: bold;
+            color: #726f6f;
+            font-size: 36px;
+            font-family: $b;
+            @media (max-width: 1440px) {
+              font-size: 30px;
+            }
+            @media (max-width: 767px) {
+              font-size: 24px;
+            }
+          }
+          img {
+            margin-right: 5px;
+          }
+        }
+      }
+      > p {
+        max-width: 630px;
+        color: $black;
+        font-size: 16px;
+        font-family: $sf;
+        margin-bottom: 35px;
+        @media (max-width: 1440px) {
+          margin-bottom: 20px;
+        }
+      }
+      #map,
+      #map2,
+      #map3 {
+        height: 210px;
+        width: 100%;
+        @media (max-width: 1440px) {
+          height: 160px;
+        }
+      }
+      .map-address {
+        font-size: 16px;
+        font-family: $sf;
+        color: $black;
+        margin: 20px 0 45px;
+        display: block;
+        @media (max-width: 1440px) {
+          margin: 20px 0;
+        }
+      }
+      .possible {
+        @include flex;
+        @include flex-wrap;
+        .possible-info {
+          margin-right: 40px;
+          margin-bottom: 15px;
+          @include flex;
+          @include align-center;
+          &:last-child {
+            margin-right: 0;
+          }
+          img {
+            margin-right: 7px;
+          }
+          span {
+            color: $black;
+            font-family: $sf;
+            font-weight: 600;
+            font-size: 20px;
+          }
+        }
+      }
+      .style2-btn {
+        margin-top: auto;
+      }
+    }
+  }
+  &:nth-child(even) {
+    .wrapper {
+      @media (max-width: 1024px) {
+        flex-direction: column-reverse;
+      }
+    }
   }
 }

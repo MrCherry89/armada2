@@ -281,7 +281,7 @@
         <div class="img-wrap">
           <img src="img/about-img.jpg" alt="" />
         </div>
-        <a href="https://vimeo.com/45830194" class="play popup-vimeo">
+        <a href="#video-popup" class="play popup">
           <img src="img/play-video.svg" alt="" />
         </a>
         <div class="info">
@@ -1160,6 +1160,67 @@
     <script src="js/select2.min.js"></script>
     <script src="js/script.js"></script>
 
+    <script>
+      const images = ["./img/about-img1.jpg", "./img/about-img2.jpg"];
+      let currentIndex = 0;
+      let cumulativeDistance = 0;
+      let hoverImage = null;
+
+      const container = document.querySelector(".container");
+
+      function showHoverImage() {
+        if (!hoverImage) {
+          hoverImage = document.createElement("img");
+          hoverImage.src = images[currentIndex];
+          hoverImage.classList.add("hover-image");
+          container.appendChild(hoverImage);
+        }
+
+        container.addEventListener("mousemove", moveHoverImage);
+      }
+
+      function removeHoverImage() {
+        if (hoverImage) {
+          container.removeChild(hoverImage);
+          hoverImage = null;
+        }
+        container.removeEventListener("mousemove", moveHoverImage);
+        cumulativeDistance = 0;
+        currentIndex = 0;
+      }
+
+      function moveHoverImage(event) {
+        if (!hoverImage) return;
+        const containerRect = container.getBoundingClientRect();
+        const x = event.clientX - containerRect.left;
+        const y = event.clientY - containerRect.top;
+        if (
+          x < 0 ||
+          x > containerRect.width ||
+          y < 0 ||
+          y > containerRect.height
+        ) {
+          removeHoverImage();
+          return;
+        }
+        cumulativeDistance +=
+          Math.abs(x - hoverImage.offsetLeft) +
+          Math.abs(y - hoverImage.offsetTop);
+
+        if (cumulativeDistance >= 200) {
+          cumulativeDistance = 0;
+          currentIndex = (currentIndex + 1) % images.length;
+          hoverImage.src = images[currentIndex];
+        }
+
+        hoverImage.style.left = `${x}px`;
+        hoverImage.style.top = `${y}px`;
+      }
+
+      container.addEventListener("mouseenter", showHoverImage);
+      container.addEventListener("mouseleave", removeHoverImage);
+    </script>
+
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 
     <div id="sent-popup" class="mfp-hide white-popup mfp-with-anim main-popup">
@@ -1203,6 +1264,15 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+
+    <div id="video-popup" class="mfp-hide white-popup mfp-with-anim main-popup">
+      <div class="popup-body">
+        <button title="Close (Esc)" type="button" class="mfp-close"></button>
+        <video preload="auto" autoplay="true" controls="true">
+          <source src="videos/video.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
 
