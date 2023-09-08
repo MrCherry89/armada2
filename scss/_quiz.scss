@@ -1,9 +1,87 @@
 .quiz-wrap {
   margin: 50px 0 150px;
   .wrapper {
+    @include flex;
+    @include justify-between;
+    @media (max-width: 1200px) {
+      flex-direction: column-reverse;
+    }
+    .left {
+      max-width: 1210px;
+      width: 100%;
+      margin-right: 20px;
+      @media (max-width: 1200px) {
+        margin-right: 0;
+      }
+    }
+    .right {
+      max-width: 440px;
+      align-self: flex-end;
+      padding-bottom: 90px;
+      @media (max-width: 1440px) {
+        max-width: 340px;
+      }
+      @media (max-width: 1200px) {
+        max-width: 100%;
+        padding-bottom: 60px;
+      }
+      @media (max-width: 767px) {
+        padding-bottom: 20px;
+      }
+      .quiz-take-test {
+        background: #f5f5f5;
+        min-height: 660px;
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        padding: 50px 30px 0;
+        align-self: flex-end;
+        &:after {
+          content: "";
+          position: absolute;
+          width: calc(100% - 20px);
+          height: calc(100% - 20px);
+          border: 1px solid rgba(black, 0.1);
+          top: 10px;
+          left: 10px;
+        }
+        @media (max-width: 1200px) {
+          min-height: 500px;
+        }
+        @media (max-width: 767px) {
+          padding: 40px 50px;
+          min-height: auto;
+        }
+
+        p {
+          font-size: 20px;
+          font-family: $sf;
+          color: $black;
+          font-weight: 600;
+          @media (max-width: 767px) {
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+        img {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          @media (max-width: 1440px) {
+            width: 320px;
+          }
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+      }
+    }
     .quiz-top {
       @include flex;
       margin-bottom: 40px;
+      @media (max-width: 767px) {
+        margin-bottom: 30px;
+      }
       > p {
         @include flex;
         margin-right: 30px;
@@ -91,123 +169,146 @@
       }
     }
     .quiz-buttons {
-      max-width: 1210px;
       @include flex;
       @include justify-between;
       width: 100%;
       margin-top: 40px;
-      a {
+      button {
         max-width: 200px;
         width: 100%;
+        &:disabled {
+          pointer-events: none;
+          opacity: 0.5;
+        }
       }
     }
-    .quiz-info {
-      @include flex;
-      @include justify-between;
-      .quiz-items {
-        max-width: 1210px;
-        width: 100%;
-        margin-right: 20px;
-        .quiz-item {
-          // display: none;
-          .quiz-title {
-            font-family: $b;
-            font-weight: bold;
-            font-size: 40px;
-            margin-bottom: 30px;
-            color: $black;
+    .quiz-items {
+      .quiz-item {
+        display: none;
+        .quiz-title {
+          font-family: $b;
+          font-weight: bold;
+          font-size: 40px;
+          margin-bottom: 30px;
+          color: $black;
+          @media (max-width: 1200px) {
+            font-size: 32px;
+            margin-bottom: 20px;
           }
-          .quiz-subtitle {
-            margin-bottom: 50px;
-            font-size: 20px;
-            font-weight: 500;
-            font-family: $sf;
-            color: #989898;
+          @media (max-width: 767px) {
+            font-size: 24px;
           }
+        }
+        .quiz-subtitle {
+          margin-bottom: 50px;
+          font-size: 20px;
+          font-weight: 500;
+          font-family: $sf;
+          color: #989898;
+          @media (max-width: 1200px) {
+            font-size: 18px;
+            margin-bottom: 40px;
+          }
+          @media (max-width: 767px) {
+            font-size: 16px;
+            margin-bottom: 20px;
+          }
+        }
+        .quiz-radios {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px 20px;
+          @media (max-width: 1200px) {
+            gap: 20px;
+          }
+          @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+            gap: 10px;
+          }
+        }
+        &.quiz-item2 {
+          .quiz-radios {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            @media (max-width: 767px) {
+              gap: 10px;
+              grid-template-columns: 1fr;
+            }
+            .radio-wrap {
+              label {
+                min-height: 660px;
+                @media (max-width: 767px) {
+                  min-height: 200px;
+                }
+              }
+            }
+          }
+        }
+        &.quiz-item3 {
+          .quiz-radios {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            @media (max-width: 767px) {
+              gap: 10px;
+              grid-template-columns: 1fr;
+            }
+            .radio-wrap {
+              label {
+                min-height: 660px;
+                @media (max-width: 767px) {
+                  min-height: 200px;
+                }
+                > img {
+                  position: absolute;
+                  top: 40%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 80%;
+                  @media (max-width: 767px) {
+                    width: 110px;
+                    top: 30%;
+                  }
+                }
+                &:after {
+                  content: none;
+                }
+              }
+            }
+          }
+        }
+        &.quiz-item4,
+        &.quiz-item5 {
           .quiz-radios {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px 20px;
-          }
-          &.quiz-item2 {
-            .quiz-radios {
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr;
+            @media (max-width: 1200px) {
               gap: 20px;
-              .radio-wrap {
-                label {
-                  min-height: 660px;
+            }
+            @media (max-width: 767px) {
+              gap: 10px;
+              grid-template-columns: 1fr;
+            }
+            .radio-wrap {
+              label {
+                > img {
+                  position: absolute;
+                  top: 40%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 80%;
+                }
+                &:after {
+                  content: none;
                 }
               }
             }
-          }
-          &.quiz-item3 {
-            .quiz-radios {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 20px;
-              .radio-wrap {
-                label {
-                  min-height: 660px;
-                  > img {
-                    position: absolute;
-                    top: 40%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 80%;
-                  }
-                  &:after {
-                    content: none;
-                  }
-                }
-              }
-            }
-          }
-          &.quiz-item4,
-          &.quiz-item5 {
-            .quiz-radios {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 40px 20px;
-              .radio-wrap {
-                label {
-                  > img {
-                    position: absolute;
-                    top: 40%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 80%;
-                  }
-                  &:after {
-                    content: none;
-                  }
-                }
-              }
-            }
-          }
-          &.active {
-            display: block;
           }
         }
-      }
-      .quiz-take-test {
-        max-width: 440px;
-        background: #f5f5f5;
-        min-height: 660px;
-        position: relative;
-        z-index: 0;
-        padding: 50px 30px 0;
-        margin-top: 144px;
-        p {
-          font-size: 20px;
-          font-family: $sf;
-          color: $black;
-          font-weight: 600;
-        }
-        img {
-          position: absolute;
-          bottom: 0;
-          right: 0;
+        &.active {
+          display: block;
         }
       }
     }
@@ -236,6 +337,9 @@
     justify-content: center;
     color: white;
     background: #f5f5f5;
+    @media (max-width: 767px) {
+      min-height: 200px;
+    }
     &:after {
       content: "";
       position: absolute;
@@ -271,6 +375,9 @@
       font-family: $b;
       font-weight: bold;
       margin-bottom: 20px;
+      @media (max-width: 1200px) {
+        font-size: 24px;
+      }
     }
 
     .circle {
@@ -284,6 +391,9 @@
       position: relative;
       z-index: 1;
       margin-bottom: 22px;
+      @media (max-width: 1200px) {
+        margin-bottom: 20px;
+      }
 
       &:after {
         content: none;
@@ -315,12 +425,70 @@
       align-items: center;
       @include justify-between;
       padding-top: 100px;
+      @media (max-width: 767px) {
+        padding-top: 60px;
+      }
       p {
         color: $black;
         font-size: 40px;
+        @media (max-width: 767px) {
+          font-size: 24px;
+        }
       }
       .circle {
         border-color: #858283;
+      }
+    }
+  }
+}
+
+.thank-wrap {
+  margin: 50px 0;
+  @media (max-width: 767px) {
+    margin: 20px 0;
+  }
+  .wrapper {
+    .thank-info {
+      position: relative;
+      z-index: 0;
+      background: #f5f5f5;
+      padding: 70px;
+      @media (max-width: 767px) {
+        padding: 30px;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        border: 1px solid rgba(black, 0.1);
+        top: 10px;
+        left: 10px;
+      }
+      h3 {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        font-family: $b;
+        color: $black;
+        margin-bottom: 40px;
+        @media (max-width: 767px) {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+      }
+      p {
+        max-width: 530px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 20px;
+        font-family: $sf;
+        font-weight: 500;
+        color: #848484;
+        @media (max-width: 767px) {
+          font-size: 16px;
+        }
       }
     }
   }
