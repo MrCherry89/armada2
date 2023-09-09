@@ -5526,6 +5526,11 @@ a:focus {
 .quiz-wrap {
   margin: 50px 0 150px;
 }
+@media (max-width: 767px) {
+  .quiz-wrap {
+    margin-bottom: 80px;
+  }
+}
 .quiz-wrap .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5758,9 +5763,23 @@ a:focus {
   width: 100%;
   margin-top: 40px;
 }
+@media (max-width: 767px) {
+  .quiz-wrap .wrapper .quiz-buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 .quiz-wrap .wrapper .quiz-buttons button {
   max-width: 200px;
   width: 100%;
+}
+@media (max-width: 767px) {
+  .quiz-wrap .wrapper .quiz-buttons button {
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
 }
 .quiz-wrap .wrapper .quiz-buttons button:disabled {
   pointer-events: none;

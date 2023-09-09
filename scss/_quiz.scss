@@ -1,5 +1,8 @@
 .quiz-wrap {
   margin: 50px 0 150px;
+  @media (max-width: 767px) {
+    margin-bottom: 80px;
+  }
   .wrapper {
     @include flex;
     @include justify-between;
@@ -179,9 +182,16 @@
       @include justify-between;
       width: 100%;
       margin-top: 40px;
+      @media (max-width: 767px) {
+        @include dir-col;
+      }
       button {
         max-width: 200px;
         width: 100%;
+        @media (max-width: 767px) {
+          margin-bottom: 10px;
+          max-width: 100%;
+        }
         &:disabled {
           pointer-events: none;
           opacity: 0.5;
