@@ -5658,6 +5658,14 @@ a:focus {
   display: inline-block;
   margin: 0 3px;
 }
+.quiz-wrap .wrapper .quiz-top > p span.start-text {
+  min-width: 12px;
+}
+@media (max-width: 767px) {
+  .quiz-wrap .wrapper .quiz-top > p span.start-text {
+    min-width: 10px;
+  }
+}
 .quiz-wrap .wrapper .quiz-top .steps {
   display: -webkit-box;
   display: -ms-flexbox;

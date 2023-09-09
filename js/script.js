@@ -732,20 +732,89 @@ $(document).ready(function () {
     $(".tab-content-item").eq(index).addClass("active");
   });
 
+  // function collectSelectedInputs() {
+  //   const quizItems = document.querySelectorAll(".quiz-item");
+
+  //   const collectedData = [];
+
+  //   quizItems.forEach(function (quizItem, index) {
+  //     const question = quizItem.querySelector(".quiz-title").textContent.trim();
+
+  //     const inputs = quizItem.querySelectorAll(
+  //       '.quiz-radios input[type="radio"]'
+  //     );
+
+  //     const selectedInput = Array.from(inputs).find((input) => input.checked);
+
+  //     if (selectedInput) {
+  //       collectedData.push({
+  //         divIndex: index + 1,
+  //         question: question,
+  //         answer: selectedInput.value,
+  //       });
+  //     }
+  //   });
+  //   console.log(collectedData);
+  // }
+
+  // $(".quiz-item input[type='radio']").on("change", function () {
+  //   var index = $(this).closest(".quiz-item").data("item");
+  //   if (index !== 1) {
+  //     $("#prev-button").prop("disabled", false);
+  //   }
+  //   $("#next-button").prop("disabled", false);
+  // });
+
+  // $("#next-button").on("click", function () {
+  //   collectSelectedInputs();
+
+  //   var currentIndex = $(".quiz-item.active").data("item");
+  //   var nextIndex = currentIndex + 1;
+  //   var currentItem = $(".quiz-item[data-item='" + currentIndex + "']");
+  //   var nextItem = $(".quiz-item[data-item='" + nextIndex + "']");
+  //   var nextStep = $(".steps .step[data-step='" + nextIndex + "']");
+
+  //   if (nextItem.length) {
+  //     currentItem.removeClass("active");
+  //     nextItem.addClass("active");
+  //     nextStep.addClass("active");
+  //     $("#prev-button").prop("disabled", false);
+
+  //     if (!nextItem.find("input[type='radio']:checked").val()) {
+  //       $("#next-button").prop("disabled", true);
+  //     }
+  //   }
+  // });
+
+  // $("#prev-button").on("click", function () {
+  //   var currentIndex = $(".quiz-item.active").data("item");
+  //   var prevIndex = currentIndex - 1;
+  //   var currentItem = $(".quiz-item[data-item='" + currentIndex + "']");
+  //   var prevItem = $(".quiz-item[data-item='" + prevIndex + "']");
+  //   var currentStep = $(".steps .step[data-step='" + currentIndex + "']");
+
+  //   if (prevItem.length) {
+  //     currentItem.removeClass("active");
+  //     prevItem.addClass("active");
+  //     currentStep.removeClass("active");
+
+  //     if (prevIndex === 1) {
+  //       $("#prev-button").prop("disabled", true);
+  //     }
+  //     $("#next-button").prop("disabled", false);
+  //   }
+  // });
+
+  const quizStep = document.querySelector(".start-text");
+  const quizItems = document.querySelectorAll(".quiz-item");
   function collectSelectedInputs() {
-    const quizItems = document.querySelectorAll(".quiz-item");
-
     const collectedData = [];
-
     quizItems.forEach(function (quizItem, index) {
       const question = quizItem.querySelector(".quiz-title").textContent.trim();
-
       const inputs = quizItem.querySelectorAll(
         '.quiz-radios input[type="radio"]'
       );
-
       const selectedInput = Array.from(inputs).find((input) => input.checked);
-
       if (selectedInput) {
         collectedData.push({
           divIndex: index + 1,
@@ -754,7 +823,7 @@ $(document).ready(function () {
         });
       }
     });
-    console.log(collectedData);
+    localStorage.setItem("quiz_data", JSON.stringify(collectedData));
   }
 
   $(".quiz-item input[type='radio']").on("change", function () {
@@ -767,7 +836,27 @@ $(document).ready(function () {
 
   $("#next-button").on("click", function () {
     collectSelectedInputs();
-
+    if (+quizStep.innerText === quizItems.length) {
+      const localData = localStorage.getItem("quiz_data");
+      const postData = {
+        localData,
+      };
+      $.ajax({
+        url: "/ajax/quiz.php",
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(postData),
+        success: function (response) {
+          console.log("Data sent successfully:", response);
+        },
+        error: function (error) {
+          console.error("Error sending data:");
+        },
+      });
+    }
+    if (quizItems.length > +quizStep.innerText) {
+      quizStep.innerText = +quizStep.innerText + 1;
+    }
     var currentIndex = $(".quiz-item.active").data("item");
     var nextIndex = currentIndex + 1;
     var currentItem = $(".quiz-item[data-item='" + currentIndex + "']");
@@ -787,6 +876,9 @@ $(document).ready(function () {
   });
 
   $("#prev-button").on("click", function () {
+    if (+quizStep.innerText > 1) {
+      quizStep.innerText = +quizStep.innerText - 1;
+    }
     var currentIndex = $(".quiz-item.active").data("item");
     var prevIndex = currentIndex - 1;
     var currentItem = $(".quiz-item[data-item='" + currentIndex + "']");
