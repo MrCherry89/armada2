@@ -181,7 +181,7 @@
             <a href="tel:+74951064020" class="phone">+7 (495) 106-40-20</a>
             <span>пн-вт 9:00 - 21:00</span>
           </div>
-          <a href="#" class="global-btn">Заказать звонок</a>
+          <a href="#send-popup" class="global-btn popup">Заказать звонок</a>
         </div>
         <div class="sign-in-wrap">
           <a href="#" class="favorite">
@@ -608,19 +608,29 @@
     <script src="js/select2.min.js"></script>
     <script src="js/script.js"></script>
 
-    <div id="sent-popup" class="mfp-hide white-popup mfp-with-anim main-popup">
+    <div id="send-popup" class="mfp-hide white-popup mfp-with-anim main-popup">
       <div class="popup-body">
         <button title="Close (Esc)" type="button" class="mfp-close"></button>
-        <div class="sent-wrap">
-          <img src="img/sent-check.svg" alt="" class="check-icon" />
-          <h2 class="black-title">
-            <span>Ваши данные успешно отправлены</span>
-          </h2>
-          <p>
-            Наш менеджер свяжется с вами в течение 20 минут и обо всем
-            проконсультирует
-          </p>
-          <a href="#" class="global-btn">На главную</a>
+        <div class="leave-info">
+          <h2>Оставьте свои данные</h2>
+          <p>Оставьте свои данные чтобы получить подборку домов</p>
+          <form class="leave-form">
+            <input type="text" name="name" placeholder="Ваше имя" />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Ваш номер"
+              class="phone-number-input"
+            />
+            <button class="style2-btn" id="send-btn">отправить</button>
+            <div class="checkbox-wrap">
+              <label>
+                <input type="checkbox" />
+                <span></span>
+                Я согласен (а) с политикой обработки персональных данных
+              </label>
+            </div>
+          </form>
         </div>
       </div>
     </div>

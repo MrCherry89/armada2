@@ -1191,23 +1191,27 @@ a:focus {
   }
 }
 
-#leave-popup {
+#leave-popup,
+#send-popup {
   max-width: 1240px;
   width: 100%;
   margin: 0 auto;
 }
-#leave-popup .popup-body {
+#leave-popup .popup-body,
+#send-popup .popup-body {
   width: 100%;
   background: white;
   padding: 80px 50px;
   position: relative;
 }
 @media (max-width: 767px) {
-  #leave-popup .popup-body {
+  #leave-popup .popup-body,
+#send-popup .popup-body {
     padding: 70px 30px;
   }
 }
-#leave-popup .popup-body .mfp-close {
+#leave-popup .popup-body .mfp-close,
+#send-popup .popup-body .mfp-close {
   width: 55px;
   height: 55px;
   position: absolute;
@@ -1219,15 +1223,18 @@ a:focus {
   border: 1px solid #e5e5e5;
 }
 @media (max-width: 767px) {
-  #leave-popup .popup-body .mfp-close {
+  #leave-popup .popup-body .mfp-close,
+#send-popup .popup-body .mfp-close {
     width: 40px;
     height: 40px;
   }
 }
-#leave-popup .popup-body .mfp-close:before {
+#leave-popup .popup-body .mfp-close:before,
+#send-popup .popup-body .mfp-close:before {
   content: none;
 }
-#leave-popup .popup-body .mfp-close:after {
+#leave-popup .popup-body .mfp-close:after,
+#send-popup .popup-body .mfp-close:after {
   content: "";
   width: 30px;
   height: 30px;
@@ -1243,14 +1250,16 @@ a:focus {
   opacity: 1;
 }
 @media (max-width: 767px) {
-  #leave-popup .popup-body .mfp-close:after {
+  #leave-popup .popup-body .mfp-close:after,
+#send-popup .popup-body .mfp-close:after {
     width: 22px;
     height: 22px;
     margin-top: -11px;
     margin-left: -11px;
   }
 }
-#leave-popup .popup-body .leave-info h2 {
+#leave-popup .popup-body .leave-info h2,
+#send-popup .popup-body .leave-info h2 {
   font-family: "Bebas Neue";
   color: #eeb116;
   text-align: center;
@@ -1260,12 +1269,14 @@ a:focus {
   font-size: 60px;
 }
 @media (max-width: 767px) {
-  #leave-popup .popup-body .leave-info h2 {
+  #leave-popup .popup-body .leave-info h2,
+#send-popup .popup-body .leave-info h2 {
     font-size: 40px;
     max-width: 320px;
   }
 }
-#leave-popup .popup-body .leave-info > p {
+#leave-popup .popup-body .leave-info > p,
+#send-popup .popup-body .leave-info > p {
   font-size: 20px;
   font-family: "SF Pro Display";
   font-weight: 600;
@@ -1274,12 +1285,14 @@ a:focus {
   color: rgba(81, 77, 78, 0.8);
 }
 @media (max-width: 767px) {
-  #leave-popup .popup-body .leave-info > p {
+  #leave-popup .popup-body .leave-info > p,
+#send-popup .popup-body .leave-info > p {
     font-size: 18px;
     margin-bottom: 40px;
   }
 }
-#leave-popup .popup-body .leave-info .leave-form {
+#leave-popup .popup-body .leave-info .leave-form,
+#send-popup .popup-body .leave-info .leave-form {
   width: 100%;
   max-width: 100%;
   display: -webkit-box;
@@ -1292,7 +1305,8 @@ a:focus {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-#leave-popup .popup-body .leave-info .leave-form .checkbox-wrap {
+#leave-popup .popup-body .leave-info .leave-form .checkbox-wrap,
+#send-popup .popup-body .leave-info .leave-form .checkbox-wrap {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -1301,18 +1315,21 @@ a:focus {
   display: flex;
   width: 100%;
 }
-#leave-popup .popup-body .leave-info .leave-form input {
+#leave-popup .popup-body .leave-info .leave-form input,
+#send-popup .popup-body .leave-info .leave-form input {
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: calc((100% - 30px) / 2);
   margin-bottom: 30px;
 }
 @media (max-width: 767px) {
-  #leave-popup .popup-body .leave-info .leave-form input {
+  #leave-popup .popup-body .leave-info .leave-form input,
+#send-popup .popup-body .leave-info .leave-form input {
     width: 100%;
     margin-bottom: 10px;
   }
 }
-#leave-popup .popup-body .leave-info .leave-form button {
+#leave-popup .popup-body .leave-info .leave-form button,
+#send-popup .popup-body .leave-info .leave-form button {
   margin-bottom: 20px;
 }
 
