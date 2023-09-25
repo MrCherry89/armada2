@@ -181,7 +181,7 @@
             <a href="tel:+74951064020" class="phone">+7 (495) 106-40-20</a>
             <span>пн-вт 9:00 - 21:00</span>
           </div>
-          <a href="#send-popup" class="global-btn popup">Заказать звонок</a>
+          <a href="#" class="global-btn">Заказать звонок</a>
         </div>
         <div class="sign-in-wrap">
           <a href="#" class="favorite">
@@ -634,5 +634,164 @@
         </div>
       </div>
     </div>
+
+    <div
+      id="test-popup-success"
+      class="mfp-hide white-popup mfp-with-anim main-popup"
+    >
+      <div class="popup-body">
+        <button title="Close (Esc)" type="button" class="mfp-close"></button>
+        <h2 class="info-title">Ваш запрос успешно отправлен!</h2>
+      </div>
+    </div>
+
+    <div
+      id="test-popup-error"
+      class="mfp-hide white-popup mfp-with-anim main-popup"
+    >
+      <div class="popup-body">
+        <button title="Close (Esc)" type="button" class="mfp-close"></button>
+        <h2 class="info-title">Ошибка в запросе</h2>
+      </div>
+    </div>
+
+    <script>
+      const sendButton = document.getElementById("send-btn");
+      function handlePopup() {
+        $.magnificPopup.open({
+          items: {
+            src: "#send-popup",
+          },
+          type: "inline",
+        });
+      }
+
+      const quizStep = document.querySelector(".start-text");
+      const quizItems = document.querySelectorAll(".quiz-item");
+      function collectSelectedInputs() {
+        const collectedData = [];
+        quizItems.forEach(function (quizItem, index) {
+          const question = quizItem
+            .querySelector(".quiz-title")
+            .textContent.trim();
+          const inputs = quizItem.querySelectorAll(
+            '.quiz-radios input[type="radio"]'
+          );
+          const selectedInput = Array.from(inputs).find(
+            (input) => input.checked
+          );
+          if (selectedInput) {
+            collectedData.push({
+              divIndex: index + 1,
+              question: question,
+              answer: selectedInput.value,
+            });
+          }
+        });
+        localStorage.setItem("quiz_data", JSON.stringify(collectedData));
+      }
+      const TEST_CLOSE_BUTTON = [
+        ...document.querySelectorAll(".test-popup-close"),
+      ];
+      TEST_CLOSE_BUTTON.forEach((elem) =>
+        elem.addEventListener("click", () => {
+          $.magnificPopup.close({
+            items: {
+              src: "#test-popup-error",
+            },
+            type: "inline",
+          });
+          $.magnificPopup.close({
+            items: {
+              src: "#test-popup-success",
+            },
+            type: "inline",
+          });
+        })
+      );
+      sendButton.addEventListener("click", () => {
+        const phone = document.querySelector(".phone-number-input")?.value;
+        const name = document.getElementById("name-input")?.value;
+        console.log(name);
+        const quizData = JSON.parse(localStorage.getItem("quiz_data"));
+        const postData = {
+          quizData,
+          userdata: {
+            name,
+            phone,
+          },
+        };
+        const URL = "https://httpstat.us/200"; // TEST ENDPOINT WITH SUCCESS RESPONSE
+        $.ajax({
+          url: URL,
+          type: "POST",
+          contentType: "application/json",
+          data: JSON.stringify(postData),
+          success: function (response) {
+            $.magnificPopup.close({
+              items: {
+                src: "#send-popup",
+              },
+              type: "inline",
+            });
+            console.log("closed");
+            $.magnificPopup.open({
+              items: {
+                src: "#test-popup-success",
+              },
+              type: "inline",
+            });
+          },
+          error: function (error) {
+            $.magnificPopup.close({
+              items: {
+                src: "#send-popup",
+              },
+              type: "inline",
+            });
+            $.magnificPopup.open({
+              items: {
+                src: "#test-popup-error",
+              },
+              type: "inline",
+            });
+          },
+        });
+      });
+
+      $(".quiz-item input[type='radio']").on("change", function () {
+        var index = $(this).closest(".quiz-item").data("item");
+        if (index !== 1) {
+          $("#prev-button").prop("disabled", false);
+        }
+        $("#next-button").prop("disabled", false);
+      });
+
+      $("#next-button").on("click", function () {
+        collectSelectedInputs();
+        if (+quizStep.innerText === quizItems.length) {
+          handlePopup();
+        }
+        if (quizItems.length > +quizStep.innerText) {
+          quizStep.innerText = +quizStep.innerText + 1;
+        }
+        var currentIndex = $(".quiz-item.active").data("item");
+        var nextIndex = currentIndex + 1;
+        var currentItem = $(".quiz-item[data-item='" + currentIndex + "']");
+        var nextItem = $(".quiz-item[data-item='" + nextIndex + "']");
+        var nextStep = $(".steps .step[data-step='" + nextIndex + "']");
+
+        if (nextItem.length) {
+          currentItem.removeClass("active");
+          nextItem.addClass("active");
+          nextStep.addClass("active");
+          $("#prev-button").prop("disabled", false);
+
+          if (!nextItem.find("input[type='radio']:checked").val()) {
+            $("#next-button").prop("disabled", true);
+          }
+        }
+      });
+    </script>
   </body>
 </html>

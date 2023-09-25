@@ -981,7 +981,8 @@ a {
 }
 
 #leave-popup,
-#send-popup {
+.main-popup,
+#test-popup-error {
   max-width: 1240px;
   width: 100%;
   margin: 0 auto;
@@ -1031,6 +1032,13 @@ a {
           margin-left: -11px;
         }
       }
+    }
+    .info-title {
+      font-size: 32px;
+      text-align: center;
+      font-weight: bold;
+      color: $black;
+      font-family: $b;
     }
     .leave-info {
       h2 {
