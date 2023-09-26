@@ -615,7 +615,12 @@
           <h2>Оставьте свои данные</h2>
           <p>Оставьте свои данные чтобы получить подборку домов</p>
           <form class="leave-form">
-            <input type="text" name="name" placeholder="Ваше имя" />
+            <input
+              type="text"
+              name="name"
+              class="name-input"
+              placeholder="Ваше имя"
+            />
             <input
               type="tel"
               name="phone"
@@ -709,54 +714,59 @@
           });
         })
       );
-      sendButton.addEventListener("click", () => {
-        const phone = document.querySelector(".phone-number-input")?.value;
-        const name = document.getElementById("name-input")?.value;
-        console.log(name);
-        const quizData = JSON.parse(localStorage.getItem("quiz_data"));
-        const postData = {
-          quizData,
-          userdata: {
-            name,
-            phone,
-          },
-        };
-        const URL = "https://httpstat.us/200"; // TEST ENDPOINT WITH SUCCESS RESPONSE
-        $.ajax({
-          url: URL,
-          type: "POST",
-          contentType: "application/json",
-          data: JSON.stringify(postData),
-          success: function (response) {
-            $.magnificPopup.close({
-              items: {
-                src: "#send-popup",
-              },
-              type: "inline",
-            });
-            console.log("closed");
-            $.magnificPopup.open({
-              items: {
-                src: "#test-popup-success",
-              },
-              type: "inline",
-            });
-          },
-          error: function (error) {
-            $.magnificPopup.close({
-              items: {
-                src: "#send-popup",
-              },
-              type: "inline",
-            });
-            $.magnificPopup.open({
-              items: {
-                src: "#test-popup-error",
-              },
-              type: "inline",
-            });
-          },
-        });
+
+      $(".leave-form").on("submit", function (e) {
+        e.preventDefault();
+
+        if ($(".leave-form").valid()) {
+          const phone = document.querySelector(".phone-number-input")?.value;
+          const name = document.querySelector(".name-input")?.value;
+          console.log(name);
+          const quizData = JSON.parse(localStorage.getItem("quiz_data"));
+          const postData = {
+            quizData,
+            userdata: {
+              name,
+              phone,
+            },
+          };
+          const URL = "https://httpstat.us/200";
+          $.ajax({
+            url: URL,
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(postData),
+            success: function (response) {
+              $.magnificPopup.close({
+                items: {
+                  src: "#send-popup",
+                },
+                type: "inline",
+              });
+
+              $.magnificPopup.open({
+                items: {
+                  src: "#test-popup-success",
+                },
+                type: "inline",
+              });
+            },
+            error: function (error) {
+              $.magnificPopup.close({
+                items: {
+                  src: "#send-popup",
+                },
+                type: "inline",
+              });
+              $.magnificPopup.open({
+                items: {
+                  src: "#test-popup-error",
+                },
+                type: "inline",
+              });
+            },
+          });
+        }
       });
 
       $(".quiz-item input[type='radio']").on("change", function () {
@@ -790,6 +800,28 @@
           if (!nextItem.find("input[type='radio']:checked").val()) {
             $("#next-button").prop("disabled", true);
           }
+        }
+      });
+
+      $("#prev-button").on("click", function () {
+        if (+quizStep.innerText > 1) {
+          quizStep.innerText = +quizStep.innerText - 1;
+        }
+        var currentIndex = $(".quiz-item.active").data("item");
+        var prevIndex = currentIndex - 1;
+        var currentItem = $(".quiz-item[data-item='" + currentIndex + "']");
+        var prevItem = $(".quiz-item[data-item='" + prevIndex + "']");
+        var currentStep = $(".steps .step[data-step='" + currentIndex + "']");
+
+        if (prevItem.length) {
+          currentItem.removeClass("active");
+          prevItem.addClass("active");
+          currentStep.removeClass("active");
+
+          if (prevIndex === 1) {
+            $("#prev-button").prop("disabled", true);
+          }
+          $("#next-button").prop("disabled", false);
         }
       });
     </script>

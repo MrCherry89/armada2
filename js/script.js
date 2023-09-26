@@ -152,37 +152,6 @@ $(document).ready(function () {
     }
   });
 
-  $(".leave-form").on("submit", function (e) {
-    e.preventDefault();
-
-    if ($(".leave-form").valid()) {
-      formData = new FormData();
-      name = $(".leave-form input[name='name']").val();
-      phone = $(".leave-form input[name='phone']").val();
-
-      formData.append("name", name);
-      formData.append("phone", phone);
-
-      $.ajax({
-        type: "POST",
-        url: "/ajax/feedback.php",
-        data: formData,
-        processData: false,
-        dataType: "json",
-        contentType: false,
-        success: function (data) {
-          $.magnificPopup.open({
-            items: {
-              src: "#sent-popup",
-            },
-            type: "inline",
-          });
-        },
-        error: function (jqXHR, textStatus, error) {},
-      });
-    }
-  });
-
   $(".calculate-form").on("submit", function (e) {
     e.preventDefault();
 
