@@ -220,18 +220,35 @@
         <div class="sidebar-menu-wrap">
           <ul class="sidebar-menu">
             <li>
-              <a href="#" class="global-btn">Мои объекты</a>
+              <a href="personal-area-objects.html" class="global-btn"
+                >Мои объекты</a
+              >
             </li>
             <li>
-              <a href="#" class="global-btn">Документы и оплата</a>
+              <a href="questions-answers.html" class="global-btn"
+                >вопросы - ответы</a
+              >
             </li>
             <li class="active">
-              <a href="#" class="global-btn">Рекламации</a>
+              <a href="repair-request.html" class="global-btn"
+                >Заявка на ремонт</a
+              >
             </li>
-            <li><a href="#" class="global-btn">Личные данные</a></li>
-            <li><a href="#" class="global-btn">Гарантийный ремонт</a></li>
-            <li><a href="#" class="global-btn">Оставить отзыв</a></li>
-            <li><a href="#" class="global-btn">Партнёрство</a></li>
+            <li>
+              <a href="partner-employee-card.html" class="global-btn"
+                >Ведущий менеджер</a
+              >
+            </li>
+            <li>
+              <a href="adding-project-send.html" class="global-btn"
+                >Данные успешно отправлены
+              </a>
+            </li>
+            <li>
+              <a href="personal-area-manager.html" class="global-btn"
+                >Добавить проект
+              </a>
+            </li>
           </ul>
         </div>
         <div class="personal-area-info">
@@ -256,18 +273,30 @@
               <div class="attached-photos">
                 <p>Прикреплённные фотографи:</p>
                 <div class="files">
-                  <span>фасад_1.jpg, </span>
-                  <span>фасад_1.jpg, </span>
-                  <span>фасад_1.jpg, </span>
-                  <span>фасад_1.jpg, </span>
-                  <span>фасад_1.jpg, </span>
+                  <p id="files-area">
+                    <span id="filesList">
+                      <span id="files-names"></span>
+                    </span>
+                  </p>
+                  <p>
+                    <input
+                      type="file"
+                      name="file[]"
+                      accept="image/png, image/svg, image/jpeg, image/jpg"
+                      id="attachment"
+                      style="visibility: hidden; position: absolute"
+                      multiple
+                    />
+                    <label for="attachment">
+                      <a class="global-btn" role="button" aria-disabled="false"
+                        >ПРИложить фото</a
+                      >
+                    </label>
+                  </p>
                 </div>
                 <div class="buttons">
                   <button type="button" class="global-btn yellow-btn">
                     Отправить
-                  </button>
-                  <button type="button" class="global-btn">
-                    ПРИложить фото
                   </button>
                 </div>
               </div>

@@ -132,6 +132,33 @@ $(document).ready(function () {
     },
   });
 
+  $(function () {
+    var tab = $("#tabs .tabs-items > div");
+    tab.hide().filter(":first").show();
+
+    $("#tabs .tabs-nav a")
+      .click(function () {
+        tab.hide();
+        tab.filter(this.hash).show();
+        $("#tabs .tabs-nav a").removeClass("active");
+        $(this).addClass("active");
+        return false;
+      })
+      .filter(":first")
+      .click();
+  });
+
+  $("#attachment").on("change", function (e) {
+    var files = $(this).prop("files");
+    for (var i = 0; i < files.length; i++) {
+      let comma = i === files.length - 1 ? "" : ",";
+      let fileBloc = $("<span/>", { class: "file-block" }),
+        fileName = $("<span/>", { class: "name", text: files[i].name + comma });
+      fileBloc.append(fileName);
+      $("#filesList > #files-names").append(fileBloc);
+    }
+  });
+
   $("#leave-agree").on("change", function (e) {
     if ($("#leave-agree").prop("checked")) {
       $(".leave-form > .style2-btn").attr("disabled", false);

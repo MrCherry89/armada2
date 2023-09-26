@@ -627,10 +627,10 @@
               placeholder="Ваш номер"
               class="phone-number-input"
             />
-            <button class="style2-btn" id="send-btn">отправить</button>
+            <button class="style2-btn" id="send-btn" disabled>отправить</button>
             <div class="checkbox-wrap">
               <label>
-                <input type="checkbox" />
+                <input type="checkbox" id="checkbox" />
                 <span></span>
                 Я согласен (а) с политикой обработки персональных данных
               </label>
@@ -670,6 +670,12 @@
           type: "inline",
         });
       }
+
+      const button = document.getElementById("send-btn");
+      const checkbox = document.getElementById("checkbox");
+      checkbox.addEventListener("change", function () {
+        button.disabled = !checkbox.checked;
+      });
 
       const quizStep = document.querySelector(".start-text");
       const quizItems = document.querySelectorAll(".quiz-item");

@@ -220,98 +220,261 @@
         <div class="sidebar-menu-wrap">
           <ul class="sidebar-menu">
             <li>
-              <a href="#" class="global-btn">Мои объекты</a>
+              <a href="personal-area-objects.html" class="global-btn"
+                >Мои объекты</a
+              >
             </li>
             <li>
-              <a href="#" class="global-btn">Документы и оплата</a>
+              <a href="questions-answers.html" class="global-btn"
+                >вопросы - ответы</a
+              >
             </li>
             <li>
-              <a href="#" class="global-btn">Рекламации</a>
+              <a href="repair-request.html" class="global-btn"
+                >Заявка на ремонт</a
+              >
+            </li>
+            <li class="active">
+              <a href="partner-employee-card.html" class="global-btn"
+                >Ведущий менеджер</a
+              >
             </li>
             <li>
-              <a href="#" class="global-btn">вопросы - ответы</a>
+              <a href="adding-project-send.html" class="global-btn"
+                >Данные успешно отправлены
+              </a>
             </li>
-            <li class="active"><a href="#" class="global-btn">Проекты</a></li>
-            <li><a href="#" class="global-btn">Личные данные</a></li>
-            <li><a href="#" class="global-btn">Гарантийный ремонт</a></li>
-            <li><a href="#" class="global-btn">Оставить отзыв</a></li>
-            <li><a href="#" class="global-btn">Партнёрство</a></li>
+            <li>
+              <a href="personal-area-manager.html" class="global-btn"
+                >Добавить проект
+              </a>
+            </li>
           </ul>
         </div>
         <div class="personal-area-info">
-          <div class="partner-employee-card">
-            <div class="top-info">
-              <div class="partner-employee-card-info">
-                <div class="img-wrap">
-                  <img src="img/wooman-person.jpg" alt="" />
+          <div class="partner-employee-card-info">
+            <div class="img-wrap">
+              <img src="img/wooman-person.jpg" alt="" />
+            </div>
+            <div class="texts">
+              <h3>Юлия Глазкова</h3>
+              <span>Ведущий менеджер</span>
+            </div>
+          </div>
+          <div id="tabs">
+            <ul class="tabs-nav">
+              <li><a href="#tab-1">Баланс</a></li>
+              <li><a href="#tab-2">Реквизиты</a></li>
+              <li><a href="#tab-3">Проекты</a></li>
+              <li><a href="#tab-4">Профиль</a></li>
+            </ul>
+
+            <div class="tabs-items">
+              <div class="tabs-item" id="tab-1">
+                <div class="balance">
+                  <div class="top">
+                    <div class="top-item">
+                      <h3>Доступно к списанию</h3>
+                      <span class="price">350 000 руб.</span>
+                    </div>
+                    <div class="top-item">
+                      <h3>Ожидает выплаты</h3>
+                      <span class="price">108 000 руб.</span>
+                    </div>
+                    <div class="top-item">
+                      <h3>Заработано в этом месяце</h3>
+                      <span class="price">280 000 руб.</span>
+                    </div>
+                  </div>
+                  <a href="#" class="global-btn yellow-btn">Списать</a>
+                  <div class="payment-history">
+                    <h4>История выплат</h4>
+                    <div class="payment-history-items">
+                      <div class="payment-history-item">
+                        <span>Период</span>
+                        <span>Сумма</span>
+                        <span>ОПФ</span>
+                        <span>Дата выплаты</span>
+                        <span>Документы</span>
+                      </div>
+                      <div class="payment-history-item">
+                        <span>Март 2023</span>
+                        <span>99 437 ₽</span>
+                        <span>ИП</span>
+                        <span>21 апреля 2023</span>
+                        <span>Акт.pdf</span>
+                      </div>
+                      <div class="payment-history-item">
+                        <span>Январь - Февраль 2023</span>
+                        <span>123 650 ₽</span>
+                        <span>Самозанятый</span>
+                        <span>25 марта 2023</span>
+                        <span>Чек.jpg</span>
+                      </div>
+                      <div class="payment-history-item">
+                        <span>Ноябрь - Декабрь 2022</span>
+                        <span>800 356 ₽</span>
+                        <span>Самозанятый</span>
+                        <span>8 февраля 2023</span>
+                        <span>Чек.jpg</span>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#" class="global-btn">Смотреть ещё</a>
                 </div>
-                <div class="texts">
-                  <h3>Юлия Глазкова</h3>
-                  <span>Ведущий менеджер</span>
-                  <p>
-                    Телефон: <a href="tel:+79265553535">+7 (926) 555 35 35</a>
-                  </p>
-                  <p>
-                    E-mail:
-                    <a href="mailto:pochta@yandex.ru">pochta@yandex.ru</a>
-                  </p>
+              </div>
+              <div class="tabs-item" id="tab-2">
+                <div class="requisites">
+                  <h4>Реквизиты для выплат</h4>
+                  <div class="requisites-item">
+                    <div class="info">
+                      <p>Организационно-правовая форма</p>
+                      <span>Индивидуальный предприниматель</span>
+                    </div>
+                  </div>
+                  <div class="requisites-item">
+                    <div class="info">
+                      <p>Организация</p>
+                    </div>
+                    <div class="info">
+                      <p class="grey">Наименование</p>
+                      <span>ИП Глазкова Юлия Павловна</span>
+                    </div>
+                    <div class="info">
+                      <p class="grey">ИНН</p>
+                      <span>63874384863463456</span>
+                    </div>
+                    <div class="info">
+                      <p class="grey">Система налогооблажения</p>
+                      <span>Упрощенная (УСН)</span>
+                    </div>
+                  </div>
+                  <div class="requisites-item">
+                    <div class="info">
+                      <p>Банковские реквизиты</p>
+                    </div>
+                    <div class="info">
+                      <p class="grey">Обслуживающий банк</p>
+                      <span>АО “Альфа Банк”</span>
+                    </div>
+                    <div class="info">
+                      <p class="grey">БИК</p>
+                      <span>654321789</span>
+                    </div>
+                    <div class="info">
+                      <p class="grey">Расчетный счет</p>
+                      <span>1634846346546565</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="info2">
-                <b>Партнёр: ПИК</b>
-                <span>Офис: Южная 8</span>
+              <div class="tabs-item" id="tab-3">
+                <div class="projects">
+                  <div class="top">
+                    <h4>Проекты</h4>
+                    <select>
+                      <option value="1">Активные</option>
+                      <option value="2">Не активные</option>
+                    </select>
+                  </div>
+                  <div class="table-item">
+                    <div class="table-item-info">
+                      <span class="style-text yellow">Фундамент</span>
+                      <span class="num">№19292929</span>
+                    </div>
+                    <div class="table-item-info">
+                      <span class="text">Алексей Игоревич (клиент)</span>
+                      <a href="tel:88005553535" class="number"
+                        >8 800 555 35 35</a
+                      >
+                    </div>
+                    <div class="table-item-info">
+                      <span class="text">Сумма</span>
+                      <span class="number">7 000 000</span>
+                    </div>
+                  </div>
+                  <div class="table-item">
+                    <div class="table-item-info">
+                      <span class="style-text green">Окна</span>
+                      <span class="num">№46398465</span>
+                    </div>
+                    <div class="table-item-info">
+                      <span class="text">Алексей Игоревич (клиент)</span>
+                      <a href="tel:88005553535" class="number"
+                        >8 800 555 35 35</a
+                      >
+                    </div>
+                    <div class="table-item-info">
+                      <span class="text">Сумма</span>
+                      <span class="number">29 000 000</span>
+                    </div>
+                  </div>
+                  <div class="table-item">
+                    <div class="table-item-info">
+                      <span class="style-text blue">Крыша</span>
+                      <span class="num">№34684623</span>
+                    </div>
+                    <div class="table-item-info">
+                      <span class="text">Алексей Игоревич (клиент)</span>
+                      <a href="tel:88005553535" class="number"
+                        >8 800 555 35 35</a
+                      >
+                    </div>
+                    <div class="table-item-info">
+                      <span class="text">Сумма</span>
+                      <span class="number">15 000 000</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="links">
-              <button type="button" class="active">В работе</button>
-              <button type="button">Завершено</button>
-            </div>
-            <div class="table-item style2">
-              <div class="table-item-info">
-                <span class="style-text yellow">Фундамент</span>
-                <span class="num">№19292929</span>
-              </div>
-              <div class="table-item-info">
-                <span class="text">Алексей Игоревич (клиент)</span>
-                <a href="tel:88005553535" class="number">8 800 555 35 35</a>
-              </div>
-              <div class="table-item-info">
-                <span class="text">Сумма</span>
-                <span class="number">200 000 руб</span>
-              </div>
-            </div>
-            <div class="table-item style2">
-              <div class="table-item-info">
-                <span class="style-text green">Окна</span>
-                <span class="num">№19292929</span>
-              </div>
-              <div class="table-item-info">
-                <span class="text">Алексей Игоревич (клиент)</span>
-                <a href="tel:88005553535" class="number">8 800 555 35 35</a>
-              </div>
-              <div class="table-item-info">
-                <span class="text">Сумма</span>
-                <span class="number">200 000 руб</span>
-              </div>
-            </div>
-            <div class="table-item style2">
-              <div class="table-item-info">
-                <span class="style-text blue">Крыша</span>
-                <span class="num">№19292929</span>
-              </div>
-              <div class="table-item-info">
-                <span class="text">Алексей Игоревич (клиент)</span>
-                <a href="tel:88005553535" class="number">8 800 555 35 35</a>
-              </div>
-              <div class="table-item-info">
-                <span class="text">Сумма</span>
-                <span class="number">200 000 руб</span>
+              <div class="tabs-item" id="tab-4">
+                <div class="profile requisites">
+                  <h4>Личные данные</h4>
+                  <div class="requisites-item">
+                    <div class="info">
+                      <p>Банковские реквизиты</p>
+                    </div>
+                    <div class="info">
+                      <p class="grey">Обслуживающий банк</p>
+                      <span>АО “Альфа Банк”</span>
+                    </div>
+                    <div class="info">
+                      <p class="grey">БИК</p>
+                      <span>654321789</span>
+                    </div>
+                    <div class="info">
+                      <p class="grey">Расчетный счет</p>
+                      <span>1634846346546565</span>
+                    </div>
+                  </div>
+                  <div class="requisites-item">
+                    <div class="info">
+                      <p>Юридическая информация</p>
+                    </div>
+                    <div class="info">
+                      <a href="#">Трудовое соглашение</a>
+                    </div>
+                    <div class="info">
+                      <a href="#">Политика конфиденциальности</a>
+                    </div>
+                  </div>
+                  <div class="requisites-item">
+                    <div class="info">
+                      <p>Управление аккаунтом</p>
+                    </div>
+                    <div class="info">
+                      <a href="#" class="close">Выйти</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <script></script>
 
     <footer class="footer">
       <div class="wrapper">
