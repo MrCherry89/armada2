@@ -7530,6 +7530,18 @@ a:focus {
   opacity: 0.5;
 }
 
+.armada-menu {
+  margin: 40px 0;
+}
+.armada-menu li {
+  margin-bottom: 5px;
+}
+.armada-menu li a {
+  color: #514d4e;
+  font-size: 18px;
+  font-family: "SF Pro Display";
+}
+
 .style-text {
   padding-left: 22px;
   position: relative;

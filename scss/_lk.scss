@@ -1032,6 +1032,18 @@
   }
 }
 
+.armada-menu {
+  margin: 40px 0;
+  li {
+    margin-bottom: 5px;
+    a {
+      color: $black;
+      font-size: 18px;
+      font-family: $sf;
+    }
+  }
+}
+
 .style-text {
   padding-left: 22px;
   position: relative;
