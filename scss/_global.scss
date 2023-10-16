@@ -3049,7 +3049,7 @@ a {
           margin-bottom: 20px;
         }
       }
-      .global-btn {
+      .style3-btn {
         width: 100%;
         margin-top: auto;
         background: white;
@@ -3061,13 +3061,9 @@ a {
         }
       }
       .info-wrap {
-        overflow: hidden;
-        height: 350px;
-        @media (max-width: 1024px) {
-          height: auto;
-        }
         .info-items {
           height: 100%;
+          margin-bottom: 30px;
           overflow-y: auto;
           border-top: 1px solid rgba(black, 0.1);
           &::-webkit-scrollbar {
@@ -3085,6 +3081,17 @@ a {
               @include flex;
               margin-right: 20px;
               overflow: hidden;
+              @media (max-width: 1200px) {
+                min-width: 130px;
+                margin-right: 10px;
+                width: 130px;
+                height: 110px;
+              }
+              @media (max-width: 767px) {
+                min-width: 150px;
+                width: 150px;
+                height: 130px;
+              }
               img {
                 width: 100%;
                 height: 100%;
@@ -3107,6 +3114,9 @@ a {
                 font-family: $sf;
                 color: #858283;
               }
+            }
+            &.active {
+              background: rgba(0, 0, 0, 0.15);
             }
           }
         }

@@ -3801,32 +3801,24 @@ a:focus {
     margin-bottom: 20px;
   }
 }
-.tour-3d .wrapper .tour-3d-info .global-btn {
+.tour-3d .wrapper .tour-3d-info .style3-btn {
   width: 100%;
   margin-top: auto;
   background: white;
 }
 @media (max-width: 1024px) {
-  .tour-3d .wrapper .tour-3d-info .global-btn {
+  .tour-3d .wrapper .tour-3d-info .style3-btn {
     margin-top: 50px;
   }
 }
 @media (max-width: 767px) {
-  .tour-3d .wrapper .tour-3d-info .global-btn {
+  .tour-3d .wrapper .tour-3d-info .style3-btn {
     margin-top: 30px;
-  }
-}
-.tour-3d .wrapper .tour-3d-info .info-wrap {
-  overflow: hidden;
-  height: 350px;
-}
-@media (max-width: 1024px) {
-  .tour-3d .wrapper .tour-3d-info .info-wrap {
-    height: auto;
   }
 }
 .tour-3d .wrapper .tour-3d-info .info-wrap .info-items {
   height: 100%;
+  margin-bottom: 30px;
   overflow-y: auto;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -3850,6 +3842,21 @@ a:focus {
   display: flex;
   margin-right: 20px;
   overflow: hidden;
+}
+@media (max-width: 1200px) {
+  .tour-3d .wrapper .tour-3d-info .info-wrap .info-items .info-item .img-wrap {
+    min-width: 130px;
+    margin-right: 10px;
+    width: 130px;
+    height: 110px;
+  }
+}
+@media (max-width: 767px) {
+  .tour-3d .wrapper .tour-3d-info .info-wrap .info-items .info-item .img-wrap {
+    min-width: 150px;
+    width: 150px;
+    height: 130px;
+  }
 }
 .tour-3d .wrapper .tour-3d-info .info-wrap .info-items .info-item .img-wrap img {
   width: 100%;
@@ -3879,6 +3886,9 @@ a:focus {
   font-size: 16px;
   font-family: "SF Pro Display";
   color: #858283;
+}
+.tour-3d .wrapper .tour-3d-info .info-wrap .info-items .info-item.active {
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .panorama-container {
