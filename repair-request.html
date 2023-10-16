@@ -371,5 +371,21 @@
     <script src="js/jquery.smooth-scroll.min.js"></script>
     <script src="js/select2.min.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+      $("#attachment").on("change", function (e) {
+        var files = $(this).prop("files");
+        for (var i = 0; i < files.length; i++) {
+          let comma = i === files.length - 1 ? "" : ",";
+          let fileBloc = $("<span/>", { class: "file-block" }),
+            fileName = $("<span/>", {
+              class: "name",
+              text: files[i].name + comma,
+            });
+          fileBloc.append(fileName);
+          $("#filesList > #files-names").append(fileBloc);
+        }
+      });
+    </script>
   </body>
 </html>

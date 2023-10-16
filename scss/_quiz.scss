@@ -458,6 +458,51 @@
   }
 }
 
+.radio-wrap-circle {
+  input[type="radio"] {
+    display: none;
+  }
+
+  input:checked + label {
+    span {
+      &:after {
+        content: "";
+      }
+    }
+  }
+
+  label {
+    @include flex;
+    @include align-center;
+    font-family: $sf;
+    color: #858283;
+
+    span {
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 10px;
+      border: 1px solid #858283;
+      position: relative;
+
+      &:after {
+        content: none;
+        position: absolute;
+        background: $black;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        margin-top: -8px;
+        margin-left: -8px;
+      }
+    }
+  }
+}
+
 .thank-wrap {
   margin: 50px 0;
   @media (max-width: 767px) {

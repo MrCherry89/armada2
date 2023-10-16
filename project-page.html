@@ -414,13 +414,22 @@
           >
         </h2>
         <div class="tour-3d-wrap">
-          <div class="panorama_container">
+          <div class="panorama-container panorama_container active">
             <div id="panorama"></div>
             <div class="section_container">
-              <div id="sec1" class="sections active">Гостиная</div>
-              <div id="sec2" class="sections">ванная</div>
-              <div id="sec3" class="sections">кухня</div>
-              <div id="sec4" class="sections">спальня</div>
+              <div id="sec5" class="sections active">Гостиная</div>
+              <div id="sec6" class="sections">ванная</div>
+              <div id="sec7" class="sections">кухня</div>
+              <div id="sec8" class="sections">спальня</div>
+            </div>
+          </div>
+          <div class="panorama-container">
+            <div id="panorama2"></div>
+            <div class="section_container2">
+              <div id="sec1" class="sections2 active">Гостиная</div>
+              <div id="sec2" class="sections2">ванная</div>
+              <div id="sec3" class="sections2">кухня</div>
+              <div id="sec4" class="sections2">спальня</div>
             </div>
           </div>
           <div class="tour-3d-info">
@@ -436,21 +445,21 @@
             </h2>
             <div class="info-wrap">
               <div class="info-items">
-                <div class="info-item">
+                <div class="info-item active">
                   <div class="img-wrap">
-                    <img src="img/televos-img1.jpg" alt="" />
+                    <img src="img/1.png" alt="" />
                   </div>
                   <div class="text-wrap">
-                    <a href="#">Прованс</a>
+                    <b>Прованс</b>
                     <span>комплектация - 1</span>
                   </div>
                 </div>
                 <div class="info-item">
                   <div class="img-wrap">
-                    <img src="img/televos-img2.jpg" alt="" />
+                    <img src="img/5.png" alt="" />
                   </div>
                   <div class="text-wrap">
-                    <a href="#">Современный минимализм</a>
+                    <b>Современный минимализм</b>
                     <span>комплектация - 2</span>
                   </div>
                 </div>
@@ -475,6 +484,79 @@
           >
         </h2>
         <div class="slider">
+          <div class="item">
+            <div class="slider-wrap">
+              <div class="slider-navigation">
+                <button type="button" class="slick-prev">
+                  <svg
+                    width="19"
+                    height="34"
+                    viewBox="0 0 19 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 2L2 17L17 32"
+                      stroke="#514D4E"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button type="button" class="slick-next">
+                  <svg
+                    width="19"
+                    height="34"
+                    viewBox="0 0 19 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 2L17 17L2 32"
+                      stroke="#514D4E"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="second-slider">
+                <div class="item2"><img src="img/plan-img1.jpg" alt="" /></div>
+                <!-- <div class="item2"><img src="img/plan-img2.jpg" alt="" /></div>
+                <div class="item2"><img src="img/plan-img1.jpg" alt="" /></div>
+                <div class="item2"><img src="img/plan-img2.jpg" alt="" /></div> -->
+              </div>
+            </div>
+            <div class="info">
+              <h4 class="bedrooms">2 спальни</h4>
+              <ul class="info-list">
+                <li>
+                  <span>площадь</span>
+                  <b>88.6 м <sup>2</sup></b>
+                </li>
+                <li>
+                  <span>этажность</span>
+                  <b>2</b>
+                </li>
+                <li>
+                  <span>санузлов</span>
+                  <b>1</b>
+                </li>
+              </ul>
+            </div>
+            <div class="info-bottom">
+              <div class="price">
+                <span>от </span>
+                <span class="yellow">3,172,770</span>
+                <span class="yellow">руб.</span>
+              </div>
+              <a href="#" class="arrow"
+                ><img src="img/slider-arr-right2.svg" alt=""
+              /></a>
+            </div>
+          </div>
           <div class="item">
             <div class="slider-wrap">
               <div class="slider-navigation">
@@ -541,36 +623,6 @@
               <div class="price">
                 <span>от </span>
                 <span class="yellow">3,172,770</span>
-                <span class="yellow">руб.</span>
-              </div>
-              <a href="#" class="arrow"
-                ><img src="img/slider-arr-right2.svg" alt=""
-              /></a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img-wrap"><img src="img/plan-img1.jpg" alt="" /></div>
-            <div class="info">
-              <h4 class="bedrooms">1 спальня</h4>
-              <ul class="info-list">
-                <li>
-                  <span>площадь</span>
-                  <b>74.2 м <sup>2</sup></b>
-                </li>
-                <li>
-                  <span>этажность</span>
-                  <b>2</b>
-                </li>
-                <li>
-                  <span>санузлов</span>
-                  <b>1</b>
-                </li>
-              </ul>
-            </div>
-            <div class="info-bottom">
-              <div class="price">
-                <span>от </span>
-                <span class="yellow">2,367,770</span>
                 <span class="yellow">руб.</span>
               </div>
               <a href="#" class="arrow"
@@ -1125,6 +1177,41 @@
     <script src="js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+      const images2 = [
+        "./img/5.png",
+        "./img/6.png",
+        "./img/7.png",
+        "./img/8.png",
+      ];
+
+      const sectionContainers2 = document.querySelectorAll(".sections2");
+
+      const generatorPanorama2 = (index) => {
+        if (currentIndex2 === index) {
+          return;
+        }
+        pannellum.viewer("panorama2", {
+          type: "equirectangular",
+          panorama: images2[index],
+          autoLoad: true,
+          showControls: false,
+          compass: false,
+        });
+        currentIndex2 = index;
+      };
+
+      let currentIndex2 = null;
+
+      sectionContainers2.forEach((section, index) => {
+        section.addEventListener("click", () => {
+          generatorPanorama2(index);
+        });
+      });
+
+      generatorPanorama2(0);
+    </script>
 
     <script>
       const images = [

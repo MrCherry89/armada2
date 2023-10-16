@@ -1095,6 +1095,97 @@ a {
   }
 }
 
+#registration-popup {
+  max-width: 650px;
+  .popup-body {
+    padding: 30px 30px;
+    @media (max-width: 767px) {
+      padding: 50px 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: $black;
+      font-family: $b;
+      font-size: 60px;
+      @media (max-width: 767px) {
+        font-size: 44px;
+        margin-bottom: 30px;
+      }
+    }
+    > p {
+      text-align: left;
+      font-family: $sf;
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      @media (max-width: 767px) {
+        font-size: 18px;
+      }
+    }
+    .registration-form {
+      width: 100%;
+      max-width: 100%;
+      @include flex;
+      @include dir-col;
+      .input-wrap {
+        position: relative;
+        margin-bottom: 20px;
+        .error {
+          opacity: 1;
+          color: red;
+          font-family: $sf;
+          font-size: 14px;
+          margin-top: 5px;
+          display: block;
+        }
+      }
+      input {
+        border: 1px solid rgba(black, 0.1);
+        width: 100%;
+        height: 50px;
+        font-size: 18px;
+        font-family: $sf;
+        padding: 0 20px;
+        @include placeholder {
+          color: rgba($black, 0.5);
+          font-size: 20px;
+        }
+        @media (max-width: 767px) {
+          height: 50px;
+          font-size: 15px;
+          @include placeholder {
+            font-size: 15px;
+          }
+        }
+      }
+      .style2-btn {
+        margin-top: 40px;
+        font-family: $sf;
+        height: 60px;
+        font-weight: normal;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        @media (max-width: 767px) {
+          height: 50px;
+          font-size: 16px;
+          margin-top: 0px;
+        }
+      }
+      .forgot-password {
+        text-align: center;
+        font-size: 18px;
+        font-family: $sf;
+        color: $black;
+        @media (max-width: 767px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
 .header {
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -1760,11 +1851,15 @@ a {
             background: $grey;
             margin: 0;
             transition: 0.3s;
+            &.drop-item {
+              .sub-menu {
+                left: 100%;
+              }
+            }
             &:hover {
               background: $black;
               &.drop-item {
                 .sub-menu {
-                  left: 100%;
                   top: 0;
                   border: 1px solid #e5e5e5;
                   background: white;
@@ -2985,6 +3080,7 @@ a {
             @include flex;
             .img-wrap {
               min-width: 150px;
+              width: 150px;
               height: 130px;
               @include flex;
               margin-right: 20px;
@@ -2999,7 +3095,7 @@ a {
               @include flex;
               @include justify-between;
               @include dir-col;
-              a {
+              b {
                 font-size: 20px;
                 font-weight: 500;
                 font-family: $sf;
@@ -3019,17 +3115,29 @@ a {
   }
 }
 
-.panorama_container {
+.panorama-container {
   width: calc(66% - 15px);
-  position: relative;
+  position: absolute;
   z-index: 0;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
   @media (max-width: 1024px) {
     width: 100%;
     margin-bottom: 20px;
   }
+  &.active {
+    position: relative;
+    height: auto;
+    visibility: visible;
+    overflow: visible;
+    opacity: 1;
+  }
 }
 
-#panorama {
+#panorama,
+#panorama2 {
   width: 100%;
   height: 40vw;
   position: relative;
@@ -3055,7 +3163,8 @@ a {
   }
 }
 
-.section_container {
+.section_container,
+.section_container2 {
   display: flex;
   width: calc(100% - 60px);
   position: absolute;
@@ -3067,7 +3176,8 @@ a {
     left: 10px;
     width: calc(100% - 20px);
   }
-  .sections {
+  .sections,
+  .sections2 {
     border: 1px solid rgba(white, 0.5);
     height: 80px;
     width: 10vw;
@@ -4363,6 +4473,67 @@ a {
     .wrapper {
       @media (max-width: 1024px) {
         flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+.blog-in {
+  padding: 80px 0 150px;
+  @media (max-width: 1024px) {
+    padding: 30px 0 80px;
+  }
+  .wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+    .img-wrap {
+      @include flex;
+      margin-bottom: 40px;
+      img {
+        width: 100%;
+      }
+    }
+    .date {
+      border-radius: 100px;
+      padding: 6px 12px;
+      background: $yellow;
+      @include inline-flex;
+      font-weight: 600;
+      font-family: $sf;
+      font-size: 14px;
+      color: white;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 72px;
+      margin-bottom: 50px;
+      font-family: $b;
+      color: $black;
+      @media (max-width: 1024px) {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+    }
+    h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-family: $b;
+      color: $black;
+      font-weight: bold;
+      @media (max-width: 1024px) {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+    }
+    > p {
+      font-size: 16px;
+      font-family: $sf;
+      margin-bottom: 50px;
+      color: $black;
+      max-width: 710px;
+      @media (max-width: 767px) {
+        font-size: 14px;
+        margin-bottom: 30px;
       }
     }
   }

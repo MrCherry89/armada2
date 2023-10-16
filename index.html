@@ -55,7 +55,7 @@
                   />
                 </svg>
               </a>
-              <a href="#" class="sign-in">
+              <a href="#registration-popup" class="sign-in popup">
                 <span>войти</span>
                 <img src="img/right-arrow.svg" alt="" />
               </a>
@@ -88,8 +88,8 @@
             <li class="drop-item">
               <a href="#">О нас</a>
               <ul class="sub-menu">
-                <li><a href="#">О компании</a></li>
-                <li><a href="#">Команда</a></li>
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="project-in.html">Команда</a></li>
                 <li><a href="#">Жизнь компании</a></li>
                 <li><a href="#">Карта проектов </a></li>
                 <li><a href="#">Блог </a></li>
@@ -204,7 +204,7 @@
               />
             </svg>
           </a>
-          <a href="#" class="sign-in">
+          <a href="#registration-popup" class="sign-in popup">
             <span>войти</span>
             <img src="img/right-arrow.svg" alt="" />
           </a>
@@ -1452,6 +1452,38 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+
+    <div
+      id="registration-popup"
+      class="mfp-hide white-popup mfp-with-anim main-popup"
+    >
+      <div class="popup-body">
+        <button title="Close (Esc)" type="button" class="mfp-close"></button>
+        <h2>Регистрация</h2>
+        <p>Введите данные</p>
+        <form class="registration-form">
+          <div class="input-wrap">
+            <input type="text" name="name" placeholder="Ваше имя" />
+          </div>
+          <div class="input-wrap">
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Ваш номер"
+              class="phone-number-input"
+            />
+          </div>
+          <div class="input-wrap">
+            <input type="email" placeholder="Почта" name="email" />
+          </div>
+          <div class="input-wrap">
+            <input type="text" placeholder="Номер договора" name="number" />
+          </div>
+          <button class="style2-btn">отправить</button>
+          <button type="button" class="forgot-password">Забыли пароль</button>
+        </form>
       </div>
     </div>
 

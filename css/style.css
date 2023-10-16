@@ -1377,6 +1377,135 @@ a:focus {
   margin-bottom: 20px;
 }
 
+#registration-popup {
+  max-width: 650px;
+}
+#registration-popup .popup-body {
+  padding: 30px 30px;
+}
+@media (max-width: 767px) {
+  #registration-popup .popup-body {
+    padding: 50px 20px;
+  }
+}
+#registration-popup .popup-body h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #514d4e;
+  font-family: "Bebas Neue";
+  font-size: 60px;
+}
+@media (max-width: 767px) {
+  #registration-popup .popup-body h2 {
+    font-size: 44px;
+    margin-bottom: 30px;
+  }
+}
+#registration-popup .popup-body > p {
+  text-align: left;
+  font-family: "SF Pro Display";
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  #registration-popup .popup-body > p {
+    font-size: 18px;
+  }
+}
+#registration-popup .popup-body .registration-form {
+  width: 100%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#registration-popup .popup-body .registration-form .input-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+#registration-popup .popup-body .registration-form .input-wrap .error {
+  opacity: 1;
+  color: red;
+  font-family: "SF Pro Display";
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+#registration-popup .popup-body .registration-form input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  font-family: "SF Pro Display";
+  padding: 0 20px;
+}
+#registration-popup .popup-body .registration-form input::-webkit-input-placeholder {
+  color: rgba(81, 77, 78, 0.5);
+  font-size: 20px;
+}
+#registration-popup .popup-body .registration-form input::-moz-placeholder {
+  color: rgba(81, 77, 78, 0.5);
+  font-size: 20px;
+}
+#registration-popup .popup-body .registration-form input:-ms-input-placeholder {
+  color: rgba(81, 77, 78, 0.5);
+  font-size: 20px;
+}
+#registration-popup .popup-body .registration-form input:-moz-placeholder {
+  color: rgba(81, 77, 78, 0.5);
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  #registration-popup .popup-body .registration-form input {
+    height: 50px;
+    font-size: 15px;
+  }
+  #registration-popup .popup-body .registration-form input::-webkit-input-placeholder {
+    font-size: 15px;
+  }
+  #registration-popup .popup-body .registration-form input::-moz-placeholder {
+    font-size: 15px;
+  }
+  #registration-popup .popup-body .registration-form input:-ms-input-placeholder {
+    font-size: 15px;
+  }
+  #registration-popup .popup-body .registration-form input:-moz-placeholder {
+    font-size: 15px;
+  }
+}
+#registration-popup .popup-body .registration-form .style2-btn {
+  margin-top: 40px;
+  font-family: "SF Pro Display";
+  height: 60px;
+  font-weight: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  #registration-popup .popup-body .registration-form .style2-btn {
+    height: 50px;
+    font-size: 16px;
+    margin-top: 0px;
+  }
+}
+#registration-popup .popup-body .registration-form .forgot-password {
+  text-align: center;
+  font-size: 18px;
+  font-family: "SF Pro Display";
+  color: #514d4e;
+}
+@media (max-width: 767px) {
+  #registration-popup .popup-body .registration-form .forgot-password {
+    font-size: 16px;
+  }
+}
+
 .header {
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -2218,11 +2347,13 @@ a:focus {
     margin: 0;
     transition: 0.3s;
   }
+  .header.fixed .menu-wrap .main-menu > li.drop-item .sub-menu {
+    left: 100%;
+  }
   .header.fixed .menu-wrap .main-menu > li:hover {
     background: #514d4e;
   }
   .header.fixed .menu-wrap .main-menu > li:hover.drop-item .sub-menu {
-    left: 100%;
     top: 0;
     border: 1px solid #e5e5e5;
     background: white;
@@ -3712,6 +3843,7 @@ a:focus {
 }
 .tour-3d .wrapper .tour-3d-info .info-wrap .info-items .info-item .img-wrap {
   min-width: 150px;
+  width: 150px;
   height: 130px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3736,7 +3868,7 @@ a:focus {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.tour-3d .wrapper .tour-3d-info .info-wrap .info-items .info-item .text-wrap a {
+.tour-3d .wrapper .tour-3d-info .info-wrap .info-items .info-item .text-wrap b {
   font-size: 20px;
   font-weight: 500;
   font-family: "SF Pro Display";
@@ -3749,40 +3881,56 @@ a:focus {
   color: #858283;
 }
 
-.panorama_container {
+.panorama-container {
   width: calc(66% - 15px);
-  position: relative;
+  position: absolute;
   z-index: 0;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
 }
 @media (max-width: 1024px) {
-  .panorama_container {
+  .panorama-container {
     width: 100%;
     margin-bottom: 20px;
   }
 }
+.panorama-container.active {
+  position: relative;
+  height: auto;
+  visibility: visible;
+  overflow: visible;
+  opacity: 1;
+}
 
-#panorama {
+#panorama,
+#panorama2 {
   width: 100%;
   height: 40vw;
   position: relative;
   z-index: 0;
 }
 @media (max-width: 1400px) {
-  #panorama {
+  #panorama,
+#panorama2 {
     height: 600px;
   }
 }
 @media (max-width: 1024px) {
-  #panorama {
+  #panorama,
+#panorama2 {
     height: 45vw;
   }
 }
 @media (max-width: 767px) {
-  #panorama {
+  #panorama,
+#panorama2 {
     height: 60vw;
   }
 }
-#panorama:after {
+#panorama:after,
+#panorama2:after {
   content: "";
   z-index: 0;
   position: absolute;
@@ -3793,7 +3941,8 @@ a:focus {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.section_container {
+.section_container,
+.section_container2 {
   display: flex;
   width: calc(100% - 60px);
   position: absolute;
@@ -3802,13 +3951,17 @@ a:focus {
   z-index: 10;
 }
 @media (max-width: 767px) {
-  .section_container {
+  .section_container,
+.section_container2 {
     bottom: 10px;
     left: 10px;
     width: calc(100% - 20px);
   }
 }
-.section_container .sections {
+.section_container .sections,
+.section_container .sections2,
+.section_container2 .sections,
+.section_container2 .sections2 {
   border: 1px solid rgba(255, 255, 255, 0.5);
   height: 80px;
   width: 10vw;
@@ -3821,32 +3974,47 @@ a:focus {
   color: white;
   text-transform: uppercase;
 }
-.section_container .sections.active {
+.section_container .sections.active,
+.section_container .sections2.active,
+.section_container2 .sections.active,
+.section_container2 .sections2.active {
   background: white;
   color: #514d4e;
 }
 @media (max-width: 1440px) {
-  .section_container .sections {
+  .section_container .sections,
+.section_container .sections2,
+.section_container2 .sections,
+.section_container2 .sections2 {
     height: 70px;
     font-size: 18px;
     margin-right: 20px;
   }
 }
 @media (max-width: 1300px) {
-  .section_container .sections {
+  .section_container .sections,
+.section_container .sections2,
+.section_container2 .sections,
+.section_container2 .sections2 {
     font-size: 16px;
     height: auto;
     padding: 15px 10px;
   }
 }
 @media (max-width: 1024px) {
-  .section_container .sections {
+  .section_container .sections,
+.section_container .sections2,
+.section_container2 .sections,
+.section_container2 .sections2 {
     width: auto;
     font-size: 16px;
   }
 }
 @media (max-width: 767px) {
-  .section_container .sections {
+  .section_container .sections,
+.section_container .sections2,
+.section_container2 .sections,
+.section_container2 .sections2 {
     font-size: 12px;
     padding: 8px;
     margin-right: 10px;
@@ -5584,6 +5752,79 @@ a:focus {
   }
 }
 
+.blog-in {
+  padding: 80px 0 150px;
+}
+@media (max-width: 1024px) {
+  .blog-in {
+    padding: 30px 0 80px;
+  }
+}
+.blog-in .wrapper {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+.blog-in .wrapper .img-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 40px;
+}
+.blog-in .wrapper .img-wrap img {
+  width: 100%;
+}
+.blog-in .wrapper .date {
+  border-radius: 100px;
+  padding: 6px 12px;
+  background: #eeb116;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-weight: 600;
+  font-family: "SF Pro Display";
+  font-size: 14px;
+  color: white;
+  margin-bottom: 20px;
+}
+.blog-in .wrapper h1 {
+  font-size: 72px;
+  margin-bottom: 50px;
+  font-family: "Bebas Neue";
+  color: #514d4e;
+}
+@media (max-width: 1024px) {
+  .blog-in .wrapper h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+}
+.blog-in .wrapper h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-family: "Bebas Neue";
+  color: #514d4e;
+  font-weight: bold;
+}
+@media (max-width: 1024px) {
+  .blog-in .wrapper h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+.blog-in .wrapper > p {
+  font-size: 16px;
+  font-family: "SF Pro Display";
+  margin-bottom: 50px;
+  color: #514d4e;
+  max-width: 710px;
+}
+@media (max-width: 767px) {
+  .blog-in .wrapper > p {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+}
+
 .quiz-wrap {
   margin: 50px 0 150px;
 }
@@ -6108,6 +6349,45 @@ a:focus {
 }
 .radio-wrap.radio-wrap3 label .circle {
   border-color: #858283;
+}
+
+.radio-wrap-circle input[type=radio] {
+  display: none;
+}
+.radio-wrap-circle input:checked + label span:after {
+  content: "";
+}
+.radio-wrap-circle label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "SF Pro Display";
+  color: #858283;
+}
+.radio-wrap-circle label span {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  border: 1px solid #858283;
+  position: relative;
+}
+.radio-wrap-circle label span:after {
+  content: none;
+  position: absolute;
+  background: #514d4e;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  margin-top: -8px;
+  margin-left: -8px;
 }
 
 .thank-wrap {
@@ -6771,11 +7051,19 @@ a:focus {
   margin-bottom: 20px;
 }
 .personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap,
-.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap {
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap {
   margin-bottom: 20px;
 }
 .personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .checkboxes,
-.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes {
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .radios,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .checkboxes,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .radios,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .radios,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .checkboxes,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .radios {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6783,17 +7071,59 @@ a:focus {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .checkboxes .radio-wrap-circle,
 .personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .checkboxes .checkbox-wrap,
-.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes .checkbox-wrap {
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .radios .radio-wrap-circle,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .radios .checkbox-wrap,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .checkboxes .radio-wrap-circle,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .checkboxes .checkbox-wrap,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .radios .radio-wrap-circle,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .radios .checkbox-wrap,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes .radio-wrap-circle,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes .checkbox-wrap,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .radios .radio-wrap-circle,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .radios .checkbox-wrap,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .checkboxes .radio-wrap-circle,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .checkboxes .checkbox-wrap,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .radios .radio-wrap-circle,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .radios .checkbox-wrap {
   margin-right: 40px;
   margin-bottom: 10px;
 }
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .checkboxes .radio-wrap-circle:last-child,
 .personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .checkboxes .checkbox-wrap:last-child,
-.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes .checkbox-wrap:last-child {
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .radios .radio-wrap-circle:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .radios .checkbox-wrap:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .checkboxes .radio-wrap-circle:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .checkboxes .checkbox-wrap:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .radios .radio-wrap-circle:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .radios .checkbox-wrap:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes .radio-wrap-circle:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes .checkbox-wrap:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .radios .radio-wrap-circle:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .radios .checkbox-wrap:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .checkboxes .radio-wrap-circle:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .checkboxes .checkbox-wrap:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .radios .radio-wrap-circle:last-child,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .radios .checkbox-wrap:last-child {
   margin-right: 0;
 }
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .checkboxes .radio-wrap-circle input,
 .personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .checkboxes .checkbox-wrap input,
-.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes .checkbox-wrap input {
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .radios .radio-wrap-circle input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .checkboxes-wrap .radios .checkbox-wrap input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .checkboxes .radio-wrap-circle input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .checkboxes .checkbox-wrap input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .radios .radio-wrap-circle input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .input-info .radios-wrap .radios .checkbox-wrap input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes .radio-wrap-circle input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .checkboxes .checkbox-wrap input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .radios .radio-wrap-circle input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .checkboxes-wrap .radios .checkbox-wrap input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .checkboxes .radio-wrap-circle input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .checkboxes .checkbox-wrap input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .radios .radio-wrap-circle input,
+.personal-area-wrap .wrapper .personal-area-info .adding-project-wrap .adding-project-form .form-info .radios-wrap .radios .checkbox-wrap input {
   height: auto;
 }
 @media (max-width: 767px) {
@@ -7513,6 +7843,103 @@ a:focus {
 }
 .partner-employee-card-info .texts span {
   opacity: 0.5;
+}
+
+.card-info-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+.card-info-wrap .partner-employee-card-info .texts p {
+  font-size: 20px;
+  font-family: "SF Pro Display";
+  margin-top: 5px;
+}
+@media (max-width: 767px) {
+  .card-info-wrap .partner-employee-card-info .texts p {
+    font-size: 16px;
+  }
+}
+.card-info-wrap .card-info-style {
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 280px;
+  height: 280px;
+}
+@media (max-width: 1300px) {
+  .card-info-wrap .card-info-style {
+    width: 190px;
+    height: 240px;
+  }
+}
+@media (max-width: 767px) {
+  .card-info-wrap .card-info-style {
+    display: none;
+  }
+}
+.card-info-wrap .card-info-style b {
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: block;
+  font-family: "SF Pro Display";
+  color: #514d4e;
+}
+.card-info-wrap .card-info-style span {
+  font-size: 20px;
+  font-family: "SF Pro Display";
+  color: #514d4e;
+}
+
+.employee-card-wrap {
+  margin-top: 80px;
+  max-width: 1200px;
+}
+@media (max-width: 767px) {
+  .employee-card-wrap {
+    margin-top: 40px;
+  }
+}
+.employee-card-wrap .links {
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.employee-card-wrap .links a {
+  margin-right: 30px;
+  display: block;
+  padding: 5px 20px;
+  border: 1px solid #e5e5e5;
+  font-size: 20px;
+  font-family: "SF Pro Display";
+  font-weight: 500;
+  color: #858283;
+  border-radius: 100px;
+}
+@media (max-width: 767px) {
+  .employee-card-wrap .links a {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+}
+.employee-card-wrap .links a:last-child {
+  margin-right: 0;
+}
+.employee-card-wrap .links a.active {
+  border-color: #eeb116;
+  background: #eeb116;
+  color: white;
 }
 
 #tabs {
